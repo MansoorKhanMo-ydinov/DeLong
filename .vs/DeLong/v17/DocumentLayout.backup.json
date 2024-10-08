@@ -59,6 +59,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DeLong\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\MainWindow.xaml",
+              "RelativeToolTip": "DeLong\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-08T16:01:00.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "DeLong\\MainWindow.xaml.cs",
