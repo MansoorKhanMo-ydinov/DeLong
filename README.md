@@ -52,5 +52,5 @@ Agar sizda savollar yoki fikrlar bo'lsa, quyidagi manzil orqali bog'lanishingiz 
 
 - Email: [mansurjonmoydinov16072002@gmail.com]
 - Phone:+998773666335
-- Telegram:@SharpistUz
-- 
+- [Telegram](t.me/+998908515979)
+  
