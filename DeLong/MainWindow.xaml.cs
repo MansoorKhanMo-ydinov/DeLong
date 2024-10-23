@@ -20,5 +20,10 @@ namespace DeLong
         {
             InitializeComponent();
         }
+
+        private void Navigator_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

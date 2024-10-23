@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\
+C:\Users\mansu\Source\Repos\DeLong\DeLong\obj\Debug\net8.0-windows\
 DeLong
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
-11407045341
+C:\Users\mansu\Source\Repos\DeLong\DeLong\App.xaml
+2144203872
 
-151849129138
+16-1450735260
 212-1492615887
-MainWindow.xaml;
+MainWindow.xaml;Pages\Clients\User.xaml;
 
 False
 
