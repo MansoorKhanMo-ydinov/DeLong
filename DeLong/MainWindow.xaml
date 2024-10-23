@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeLong"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Delong" Height="600" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0" Background="#2A2A2A">
+            <StackPanel Margin="20">
+                <Border Height="50" Background="#3B3B3B" CornerRadius="15" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Width="24" Height="24" Margin="10,0,10,0"/>
+                        <Label FontFamily="JetBrains Mono" Content="Dashboard" Foreground="#FFFFFF" FontSize="18" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Height="50" Background="#3B3B3B" CornerRadius="15" Margin="0,0,0,10" MouseDown="MenuCategories_MouseDown">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Width="24" Height="24" Margin="10,0,10,0"/>
+                        <Label FontFamily="JetBrains Mono" Content="Categories" Foreground="#FFFFFF" FontSize="18" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Height="50" Background="#3B3B3B" CornerRadius="15" Margin="0,0,0,10" MouseDown="MenuProducts_MouseDown">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Width="24" Height="24" Margin="10,0,10,0"/>
+                        <Label FontFamily="JetBrains Mono" Content="Products" Foreground="#FFFFFF" FontSize="18" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Orqa fond bo'shligi -->
+                <Border Margin="0,0,0,10" Background="#3B3B3B" CornerRadius="15" Height="50" MouseDown="LoginButton_Click">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image  Width="24" Height="24" Margin="10,0,10,0"/>
+                        <TextBlock Text="Login" VerticalAlignment="Center" Foreground="#FFFFFF" FontFamily="JetBrains Mono" FontSize="18"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Registratsiya -->
+                <Border Margin="0,0,0,10" Background="#3B3B3B" CornerRadius="15" Height="50" MouseDown="RegistrationButton_Click">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image  Width="24" Height="24" Margin="10,0,10,0"/>
+                        <TextBlock Text="Registration" VerticalAlignment="Center" Foreground="#FFFFFF" FontFamily="JetBrains Mono" FontSize="18"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#F0F0F0">
+            <Frame x:Name="Navigator" Margin="157,43,-137,-23" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
+        </Grid>
     </Grid>
 </Window>
