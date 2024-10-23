@@ -102,3 +102,8 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\refint\DeLong
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong.pdb
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong.genruntimeconfig.cache
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\ref\DeLong.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\User.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\User.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\User.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\User.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong_Content.g.cs

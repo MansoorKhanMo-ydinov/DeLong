@@ -21,8 +21,7 @@
             Width="200"
             CornerRadius="20"
             VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            MouseDown="Boder_MouseDown">
+            HorizontalAlignment="Right">
             <Label Content="Add"
                Foreground="White"
                FontSize="18"
