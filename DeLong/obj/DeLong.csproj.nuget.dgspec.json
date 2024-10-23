@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mansu\\Source\\Repos\\DeLong\\DeLong\\DeLong.csproj": {}
+    "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\DeLong.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mansu\\Source\\Repos\\DeLong\\DeLong\\DeLong.csproj": {
+    "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\DeLong.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mansu\\Source\\Repos\\DeLong\\DeLong\\DeLong.csproj",
+        "projectUniqueName": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\DeLong.csproj",
         "projectName": "DeLong",
-        "projectPath": "C:\\Users\\mansu\\Source\\Repos\\DeLong\\DeLong\\DeLong.csproj",
+        "projectPath": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\DeLong.csproj",
         "packagesPath": "C:\\Users\\mansu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mansu\\Source\\Repos\\DeLong\\DeLong\\obj\\",
+        "outputPath": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mansu\\AppData\\Roaming\\NuGet\\NuGet.Config",
