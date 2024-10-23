@@ -50,7 +50,7 @@ Bu loyiha [MIT licenziyasi](LICENSE) ostida tarqatiladi.
 
 Agar sizda savollar yoki fikrlar bo'lsa, quyidagi manzil orqali bog'lanishingiz mumkin:
 
-- Email: [mansurjonmoydinov16072002@gmail.com]
+- Email: mansurjonmoydinov16072002@gmail.com
 - Phone:+998773666335
 - [Telegram](t.me/+998908515979)
   
