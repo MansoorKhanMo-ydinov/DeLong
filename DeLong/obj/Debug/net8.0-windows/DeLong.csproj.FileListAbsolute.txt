@@ -111,3 +111,4 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\AddUserWindow.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\UserPage.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\UserPage.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\UserEditWindow.g.cs
