@@ -14,16 +14,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Left Sidebar (Panel) -->
         <Grid Grid.Column="0" Background="#2C3639">
             <StackPanel Margin="20">
 
-
+                <!-- Klent Section -->
                 <Border 
                     Height="50" 
                     Background="#3F4E4F" 
                     CornerRadius="15" 
                     Margin="0,0,0,10" >
-
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
@@ -40,14 +40,76 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Ombor Section -->
+                <Border 
+                    Height="50" 
+                    Background="#3F4E4F" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10" >
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Омбор" 
+                            Foreground="#DCD7C9" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
+                <!-- Kirim Section -->
+                <Border 
+                    Height="50" 
+                    Background="#3F4E4F" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10" >
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Кирим" 
+                            Foreground="#DCD7C9" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-
-
+                <!-- Chiqim Section -->
+                <Border 
+                    Height="50" 
+                    Background="#3F4E4F" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10" >
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Чиқим" 
+                            Foreground="#DCD7C9" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
             </StackPanel>
         </Grid>
 
+        <!-- Main Content Area (Right Side) -->
         <Grid Grid.Column="1" Background="#3F4E4F">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
