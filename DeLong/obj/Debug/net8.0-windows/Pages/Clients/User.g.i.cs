@@ -61,7 +61,7 @@ namespace DeLong.Pages.Clients {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DeLong;component/pages/clients/user.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DeLong;V1.0.0.0;component/pages/clients/user.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Clients\User.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
