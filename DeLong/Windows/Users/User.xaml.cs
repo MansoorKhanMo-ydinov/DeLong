@@ -17,5 +17,15 @@ namespace DeLong.Windows.Users
         {
 
         }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void UsersDataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

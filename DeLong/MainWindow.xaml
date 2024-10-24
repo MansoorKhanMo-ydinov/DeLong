@@ -14,13 +14,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="#222831">
+        <Grid Grid.Column="0" Background="#2C3639">
             <StackPanel Margin="20">
 
 
                 <Border 
                     Height="50" 
-                    Background="#393E46" 
+                    Background="#3F4E4F" 
                     CornerRadius="15" 
                     Margin="0,0,0,10" >
 
@@ -34,7 +34,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Клент" 
-                            Foreground="#EEEEEE" 
+                            Foreground="#DCD7C9" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -48,7 +48,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Column="1" Background="#00ADB5">
+        <Grid Grid.Column="1" Background="#3F4E4F">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
     </Grid>

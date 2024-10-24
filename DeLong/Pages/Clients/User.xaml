@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User">
 
-    <Grid Background="#f0f0f0">
+    <Grid Background="#3F4E4F">
         <!-- Fon rangini yumshoq qilib o'zgartirdik -->
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -16,14 +16,14 @@
         </Grid.RowDefinitions>
 
         <!-- Yangi kategoriya qo'shish uchun knopka -->
-        <Border Background="#2bc48a"
+        <Border Background="#A27B5C"
             Height="40"
             Width="200"
             CornerRadius="20"
             VerticalAlignment="Center"
             HorizontalAlignment="Right">
             <Label Content="Add"
-               Foreground="White"
+               Foreground="#DCD7C9"
                FontSize="18"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
