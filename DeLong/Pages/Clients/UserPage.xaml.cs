@@ -1,104 +1,102 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using DeLong.DbContexts;
+using DeLong.Entities.Users;
 using DeLong.Windows.Users;
+using Microsoft.EntityFrameworkCore;
 
 namespace DeLong.Pages.Clients
 {
     public partial class UserPage : Page
     {
-        private List<User> users; // Foydalanuvchilar ro'yxati
+        private AppdbContext _context;
 
         public UserPage()
         {
             InitializeComponent();
+            _context = new AppdbContext();
             LoadUsers();
         }
 
         // Foydalanuvchilarni yuklash
-        private void LoadUsers()
+        private async void LoadUsers()
         {
-            // Bu yerda ma'lumotlar bazasidan foydalanuvchilarni yuklashingiz mumkin
-            users = new List<User>
+            try
             {
-                new User { FIO = "Ali Valiyev", Telefon = "998901234567", Adres = "Toshkent", TelegramRaqam = "@ali", INN = "123456789" },
-                new User { FIO = "Sara Akbarova", Telefon = "998901234568", Adres = "Samarqand", TelegramRaqam = "@sara", INN = "987654321" }
-                // Boshqa foydalanuvchilarni qo'shishingiz mumkin
-            };
-
-            userDataGrid.ItemsSource = users; // DataGridga foydalanuvchilarni ulash
-        }
-
-        // Qidiruv tugmasi bosilganda
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
-        {
-            var searchTerm = txtSearch.Text.ToLower();
-            var filteredUsers = users.Where(u => u.FIO.ToLower().Contains(searchTerm)).ToList();
-            userDataGrid.ItemsSource = filteredUsers; // Filtrlangan foydalanuvchilarni ko'rsatish
-        }
-
-        // Foydalanuvchi qo'shish
-        private void AddUserButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Foydalanuvchi qo'shish formasi uchun yangi oynani ochish
-            AddUserWindow userForm = new();
-            if (userForm.ShowDialog() == true)
+                // Ma'lumotlar bazasidan foydalanuvchilarni yuklash
+                var users = await _context.Users.ToListAsync();
+                userDataGrid.ItemsSource = users; // DataGridga foydalanuvchilarni ulash
+            }
+            catch (Exception ex)
             {
-                users.Add(userForm.NewUser); // Yangi foydalanuvchini ro'yxatga qo'shish
-                userDataGrid.Items.Refresh(); // DataGridni yangilash
+                MessageBox.Show($"Foydalanuvchilarni yuklashda xato: {ex.Message}");
             }
         }
 
-        // Tahrirlash tugmasi bosilganda
-        
+        // Foydalanuvchi qo'shish
+        private async void AddUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserWindow userForm = new();
+            if (userForm.ShowDialog() == true)
+            {
+                try
+                {
+                    // Yangi foydalanuvchini ma'lumotlar bazasiga qo'shish
+                    _context.Users.Add(userForm.NewUser);
+                    await _context.SaveChangesAsync();
+                    LoadUsers(); // Foydalanuvchilarni yangidan yuklash
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Foydalanuvchini qo'shishda xato: {ex.Message}");
+                }
+            }
+        }
 
-        // O'chirish tugmasi bosilganda
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        // Foydalanuvchini o'chirish
+        private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             var user = button.DataContext as User;
 
-            // Foydalanuvchini o'chirish
             if (user != null)
             {
-                users.Remove(user); // Foydalanuvchini ro'yxatdan olib tashlash
-                userDataGrid.Items.Refresh(); // DataGridni yangilash
+                try
+                {
+                    _context.Users.Remove(user);
+                    await _context.SaveChangesAsync();
+                    LoadUsers(); // Foydalanuvchilarni yangilash
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Foydalanuvchini o'chirishda xato: {ex.Message}");
+                }
             }
         }
 
-       private void EditButton_Click(object sender, RoutedEventArgs e)
-{
-    var button = sender as Button; // Tugma ob'ektini olish
-    var user = button.DataContext as User; // Tugma kontekstidan foydalanuvchini olish
-
-    if (user != null)
-    {
-        // Foydalanuvchini tahrirlash formasi uchun yangi oynani ochish
-        AddUserWindow userForm = new AddUserWindow(user); // Foydalanuvchi ob'ekti bilan yangi forma
-
-        // Forma ochilganda va "OK" tugmasi bosilganda yangilash
-        if (userForm.ShowDialog() == true)
+        // Tahrirlash tugmasi bosilganda
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            // Yangilangan foydalanuvchini yangilash
-            var index = users.IndexOf(user); // Foydalanuvchini ro'yxatdagi indeksini olish
-            if (index != -1)
+            var button = sender as Button;
+            var user = button.DataContext as User;
+
+            if (user != null)
             {
-                // Yangilangan foydalanuvchini ro'yxatga qo'shish
-                users[index] = userForm.UpdatedUser; // Yangilangan foydalanuvchini qo'shish
-                userDataGrid.Items.Refresh(); // DataGridni yangilash
+                UserEditWindow editWindow = new UserEditWindow(user); // Tahrirlash oynasiga foydalanuvchi yuboriladi
+                if (editWindow.ShowDialog() == true)
+                {
+                    try
+                    {
+                        _context.Users.Update(editWindow.UpdatedUser);
+                        _context.SaveChanges();
+                        LoadUsers(); // Foydalanuvchilarni yangilash
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Foydalanuvchini tahrirlashda xato: {ex.Message}");
+                    }
+                }
             }
         }
-    }
-}
-
-    }
-
-    // Foydalanuvchi klassi
-    public class User
-    {
-        public string FIO { get; set; }
-        public string Telefon { get; set; }
-        public string Adres { get; set; }
-        public string TelegramRaqam { get; set; }
-        public string INN { get; set; }
     }
 }

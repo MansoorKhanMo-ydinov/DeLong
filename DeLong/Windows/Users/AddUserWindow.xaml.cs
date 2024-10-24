@@ -1,69 +1,63 @@
 ﻿using System.Windows;
-using DeLong.Pages.Clients;
+using DeLong.Entities.Users;
 
-namespace DeLong.Windows.Users
+namespace DeLong.Windows.Users;
+
+/// <summary>
+/// Interaction logic for AddUserWindow.xaml
+/// </summary>
+public partial class AddUserWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for AddUserWindow.xaml
-    /// </summary>
-    public partial class AddUserWindow : Window
+    public User NewUser { get; private set; } // Yangi foydalanuvchi uchun xususiyat
+
+    public AddUserWindow()
     {
-        public User NewUser { get; private set; } // Yangi foydalanuvchini saqlash uchun xususiyat
-        public User UpdatedUser { get; private set; } // Yangilangan foydalanuvchi uchun xususiyat
+        InitializeComponent();
+    }
 
+    // "Add User" tugmasi bosilganda
+    private void AddUserButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Foydalanuvchi ma'lumotlarini olish
+        string fio = txtFIO.Text.Trim();
+        string telefon = txtTelefon.Text.Trim();
+        string adres = txtAdres.Text.Trim();
+        string telegramRaqam = txtTelegramRaqam.Text.Trim();
+        string innText = txtINN.Text.Trim();
 
-        public AddUserWindow(User userData = null) // Parametr qo'shildi
+        // Ma'lumotlarni tekshirish
+        if (string.IsNullOrWhiteSpace(fio) ||
+            string.IsNullOrWhiteSpace(telefon) ||
+            string.IsNullOrWhiteSpace(adres) ||
+            string.IsNullOrWhiteSpace(telegramRaqam) ||
+            string.IsNullOrWhiteSpace(innText))
         {
-            InitializeComponent();
-
-            if (userData != null)
-            {
-                // Agar foydalanuvchi tahrirlanayotgan bo'lsa, maydonlarni to'ldirish
-                txtFIO.Text = userData.FIO;
-                txtTelefon.Text = userData.Telefon;
-                txtAdres.Text = userData.Adres;
-                txtTelegramRaqam.Text = userData.TelegramRaqam;
-                txtINN.Text = userData.INN;
-            }
+            MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
         }
 
-        // "Add User" tugmasi bosilganda chaqiriladi
-        private void AddUserButton_Click(object sender, RoutedEventArgs e)
+        // INN qiymatini int ga aylantirish
+        if (!int.TryParse(innText, out int inn))
         {
-            // Foydalanuvchi ma'lumotlarini olish
-            string fio = txtFIO.Text.Trim();
-            string telefon = txtTelefon.Text.Trim();
-            string adres = txtAdres.Text.Trim();
-            string telegramRaqam = txtTelegramRaqam.Text.Trim();
-            string inn = txtINN.Text.Trim();
-
-            // Ma'lumotlarni tekshirish
-            if (string.IsNullOrWhiteSpace(fio) ||
-                string.IsNullOrWhiteSpace(telefon) ||
-                string.IsNullOrWhiteSpace(adres) ||
-                string.IsNullOrWhiteSpace(telegramRaqam) ||
-                string.IsNullOrWhiteSpace(inn))
-            {
-                MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            // Yangi foydalanuvchini saqlash
-            NewUser = new User // Yangi foydalanuvchini yaratish
-            {
-                FIO = fio,
-                Telefon = telefon,
-                Adres = adres,
-                TelegramRaqam = telegramRaqam,
-                INN = inn
-            };
-
-            // Yana bir xabar ko'rsatish
-            MessageBox.Show("Foydalanuvchi muvaffaqiyatli qo'shildi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            // Dasturdan chiqish
-            this.DialogResult = true; // Oyna muvaffaqiyatli yopiladi
-            this.Close();
+            MessageBox.Show("INN faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
         }
+
+        // Yangi foydalanuvchini yaratish
+        NewUser = new User
+        {
+            FIO = fio,
+            Telefon = telefon,
+            Adres = adres,
+            TelegramRaqam = telegramRaqam,
+            INN = inn // INN endi int tipida
+        };
+
+        // Foydalanuvchini muvaffaqiyatli qo'shilgani haqida xabar ko'rsatish
+        MessageBox.Show("Foydalanuvchi muvaffaqiyatli qo'shildi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        // Oynani yopish
+        this.DialogResult = true;
+        this.Close();
     }
 }
