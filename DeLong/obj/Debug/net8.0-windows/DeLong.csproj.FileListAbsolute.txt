@@ -105,3 +105,7 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\ref\DeLong.dl
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\User.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\User.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong_Content.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\ControlzEx.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\MahApps.Metro.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\de\MahApps.Metro.resources.dll
