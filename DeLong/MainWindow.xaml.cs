@@ -33,7 +33,7 @@ namespace DeLong
         private void UsersButton_Click(object sender, MouseButtonEventArgs e)
         {
             // Foydalanuvchilar sahifasini yuklash
-            Navigator.Navigate(new Pages.Clients.User());
+            Navigator.Navigate(new Pages.Clients.UserPage());
         }
     }
 }

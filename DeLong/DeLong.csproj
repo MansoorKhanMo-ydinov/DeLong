@@ -27,7 +27,6 @@
     <Folder Include="Assets\Images\" />
     <Folder Include="Assets\Icons\" />
     <Folder Include="Assets\Logos\" />
-    <Folder Include="Windows\" />
   </ItemGroup>
 
 </Project>
