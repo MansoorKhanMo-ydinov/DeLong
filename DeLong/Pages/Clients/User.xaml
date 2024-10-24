@@ -4,39 +4,80 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DeLong.Pages.Clients"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User">
 
-    <Grid Background="#3F4E4F">
-        <!-- Fon rangini yumshoq qilib o'zgartirdik -->
+    <Grid Background="#2E073F">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Yangi kategoriya qo'shish uchun knopka -->
-        <Border Background="#A27B5C"
-            Height="40"
-            Width="200"
-            CornerRadius="20"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right">
-            <Label Content="Add"
-               Foreground="#DCD7C9"
-               FontSize="18"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               FontWeight="Bold"
-               FontFamily="JetBrains Mono">
-            </Label>
-        </Border>
+        <!-- Search Box va Search Button -->
+        <StackPanel 
+            Orientation="Horizontal" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left" 
+            Grid.Row="0" 
+            Margin="10">
+            <TextBox 
+                x:Name="txtSearch" 
+                Width="200" 
+                Height="30" 
+                VerticalAlignment="Center" 
+                Margin="0,0,10,0" 
+                Background="#7A1CAC"
+                Foreground="#EBD3F8"
+                controls:TextBoxHelper.Watermark="Search User"/>
+            <Button 
+                Content="Search" 
+                Width="80" 
+                Height="30" 
+                Click="Search_Click" 
+                VerticalAlignment="Center"
+                Background="#7A1CAC"
+                Foreground="#EBD3F8"/>
+            <!-- Add Buttonni qo'shish -->
+            <Button 
+                Content="Add" 
+                Width="80" 
+                Height="30" 
+                VerticalAlignment="Center" 
+                Margin="400,0,0,0"
+                Background="#7A1CAC"
+                Foreground="#EBD3F8"
+                Click="Add_Click"/>
+        </StackPanel>
 
-        <!-- Kategoriyalarni yuklash uchun Panel -->
-        <WrapPanel x:Name="wrpCategories" Grid.Row="1" Margin="10" MaxWidth="1200">
-            <!-- MaxWidth ni belgilash -->
-            <!-- Bu yerda dinamik kontent yuklanadi -->
-        </WrapPanel>
+        <!-- Foydalanuvchilar jadvali (User Table) -->
+        <DataGrid 
+            x:Name="userDataGrid" 
+            Grid.Row="1" Margin="10" 
+            AutoGenerateColumns="False" 
+            CanUserAddRows="False" 
+            Background="#AD49E1" 
+            Foreground="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="ID" 
+                    Binding="{Binding Id}" 
+                    Width="50"/>
+                <DataGridTextColumn 
+                    Header="Name" 
+                    Binding="{Binding Name}" 
+                    Width="200"/>
+                <DataGridTextColumn 
+                    Header="Email" 
+                    Binding="{Binding Email}" 
+                    Width="250"/>
+                <DataGridTextColumn 
+                    Header="Phone" 
+                    Binding="{Binding Phone}" 
+                    Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>
