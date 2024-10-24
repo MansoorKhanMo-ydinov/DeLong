@@ -11,5 +11,10 @@ namespace DeLong.Pages.Clients
         {
             InitializeComponent();
         }
+
+        private void userDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
