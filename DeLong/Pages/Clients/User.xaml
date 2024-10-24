@@ -35,49 +35,59 @@
                 Content="Search" 
                 Width="80" 
                 Height="30" 
-                Click="Search_Click" 
                 VerticalAlignment="Center"
                 Background="#7A1CAC"
                 Foreground="#EBD3F8"/>
-            <!-- Add Buttonni qo'shish -->
             <Button 
                 Content="Add" 
                 Width="80" 
                 Height="30" 
                 VerticalAlignment="Center" 
-                Margin="400,0,0,0"
+                Margin="10,0,0,0"
                 Background="#7A1CAC"
                 Foreground="#EBD3F8"
-                Click="Add_Click"/>
+               />
         </StackPanel>
 
         <!-- Foydalanuvchilar jadvali (User Table) -->
-        <DataGrid 
-            x:Name="userDataGrid" 
-            Grid.Row="1" Margin="10" 
-            AutoGenerateColumns="False" 
-            CanUserAddRows="False" 
-            Background="#AD49E1" 
-            Foreground="Black">
+        <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          Background="#AD49E1"
+          Foreground="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn 
-                    Header="ID" 
-                    Binding="{Binding Id}" 
-                    Width="50"/>
-                <DataGridTextColumn 
-                    Header="Name" 
-                    Binding="{Binding Name}" 
-                    Width="200"/>
-                <DataGridTextColumn 
-                    Header="Email" 
-                    Binding="{Binding Email}" 
-                    Width="250"/>
-                <DataGridTextColumn 
-                    Header="Phone" 
-                    Binding="{Binding Phone}" 
-                    Width="150"/>
+                <DataGridTextColumn Header="FIO" Binding="{Binding FIO}" Width="*"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="*"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding Adres}" Width="*"/>
+                <DataGridTextColumn Header="Telegram Raqam" Binding="{Binding TelegramRaqam}" Width="*"/>
+                <DataGridTextColumn Header="INN" Binding="{Binding INN}" Width="100"/>
+
+                <!-- Action ustuni (Edit va Delete tugmalari) -->
+                <DataGridTemplateColumn Header="Actions" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <!-- Tahrirlash tugmasi -->
+                                <Button Content="✏️" 
+                                ToolTip="Edit"
+                                Width="30"
+                                Height="30"
+                                Background="LightBlue"
+                                Margin="5,0"/>
+
+                                <!-- O'chirish tugmasi -->
+                                <Button Content="🗑️"
+                                ToolTip="Delete"
+                                Width="30"
+                                Height="30"
+                               
+                                Background="Red"
+                                Margin="5,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Page>

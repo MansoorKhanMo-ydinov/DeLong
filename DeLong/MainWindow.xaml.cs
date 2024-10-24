@@ -9,6 +9,8 @@ namespace DeLong
         public MainWindow()
         {
             InitializeComponent();
+            // Dastlabki sahifani yuklash (agar kerak bo'lsa)
+            // Navigator.Navigate(new Pages.Clients.User()); 
         }
 
         // Exit Application when "Exit" section is clicked
@@ -25,6 +27,13 @@ namespace DeLong
         {
             // Navigatsiya qilganingizda, bu funksiya foydalaniladi.
             // Hozircha uni bo'sh qoldirishingiz mumkin yoki qo'shimcha sahifalar tayyorlaganingizda o'zgartirishingiz mumkin.
+        }
+
+        // Users button click event to navigate to the User page
+        private void UsersButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            // Foydalanuvchilar sahifasini yuklash
+            Navigator.Navigate(new Pages.Clients.User());
         }
     }
 }
