@@ -1,5 +1,5 @@
 ﻿DeLong
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
 3-890944990
 11901224391
-24832985972
+222080055580
 212-1492615887
 MainWindow.xaml;Pages\Clients\User.xaml;Windows\Users\User.xaml;
 
