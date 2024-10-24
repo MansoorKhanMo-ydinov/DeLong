@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Title="Delong" 
         Height="600" 
-        Width="900">
+        Width="900"
+        Background="#1C1C1E">
+
+    <!-- Define resources for DropShadowEffect -->
+    <Window.Resources>
+        <DropShadowEffect x:Key="DefaultDropShadowEffect" ShadowDepth="5" Opacity="0.5" BlurRadius="10"/>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -15,15 +22,16 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left Sidebar (Panel) -->
-        <Grid Grid.Column="0" Background="#2C3639">
+        <Grid Grid.Column="0" Background="#2E073F">
             <StackPanel Margin="20">
 
-                <!-- Klent Section -->
+                <!-- Klient Section -->
                 <Border 
                     Height="50" 
-                    Background="#3F4E4F" 
+                    Background="#7A1CAC" 
                     CornerRadius="15" 
-                    Margin="0,0,0,10" >
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
@@ -33,8 +41,8 @@
                                Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Клент" 
-                            Foreground="#DCD7C9" 
+                            Content="Клиент" 
+                            Foreground="#EBD3F8" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -43,9 +51,10 @@
                 <!-- Ombor Section -->
                 <Border 
                     Height="50" 
-                    Background="#3F4E4F" 
+                    Background="#7A1CAC" 
                     CornerRadius="15" 
-                    Margin="0,0,0,10" >
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
@@ -56,7 +65,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Омбор" 
-                            Foreground="#DCD7C9" 
+                            Foreground="#EBD3F8" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -65,9 +74,10 @@
                 <!-- Kirim Section -->
                 <Border 
                     Height="50" 
-                    Background="#3F4E4F" 
+                    Background="#7A1CAC" 
                     CornerRadius="15" 
-                    Margin="0,0,0,10" >
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
@@ -78,7 +88,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Кирим" 
-                            Foreground="#DCD7C9" 
+                            Foreground="#EBD3F8" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -87,9 +97,10 @@
                 <!-- Chiqim Section -->
                 <Border 
                     Height="50" 
-                    Background="#3F4E4F" 
+                    Background="#7A1CAC" 
                     CornerRadius="15" 
-                    Margin="0,0,0,10" >
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
@@ -100,7 +111,77 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Чиқим" 
-                            Foreground="#DCD7C9" 
+                            Foreground="#EBD3F8" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Settings Section -->
+                <Border 
+                    Height="50" 
+                    Background="#7A1CAC" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Settings" 
+                            Foreground="#EBD3F8" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Information Section -->
+                <Border 
+                    Height="50" 
+                    Background="#7A1CAC" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Information" 
+                            Foreground="#EBD3F8" 
+                            FontSize="18" 
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Exit Section -->
+                <Border 
+                    Height="50" 
+                    Background="#7A1CAC" 
+                    CornerRadius="15" 
+                    Margin="0,0,0,10"
+                    MouseDown="ExitApplication"
+                    Effect="{StaticResource DefaultDropShadowEffect}">
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image 
+                               Width="24"
+                               Height="24"/>
+                        <Label 
+                            FontFamily="JetBrains Mono" 
+                            Content="Exit" 
+                            Foreground="#EBD3F8" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -110,7 +191,7 @@
         </Grid>
 
         <!-- Main Content Area (Right Side) -->
-        <Grid Grid.Column="1" Background="#3F4E4F">
+        <Grid Grid.Column="1" Background="#382466">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
     </Grid>
