@@ -10,6 +10,6 @@ public class AppdbContext:DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // PostgreSQL ulanish satrini kiriting
-        optionsBuilder.UseNpgsql("Host=LocalHost;Port=5432;Database=DelongDb;Username=postgres;Password=mansurjon1607");
+        optionsBuilder.UseNpgsql("Host=LocalHost;Port=5432;Database=MansurjonDb;Username=postgres;Password=mansurjon1607");
     }
 }

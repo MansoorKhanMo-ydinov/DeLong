@@ -8,8 +8,8 @@ public class User:Auditable
     public string TelegramRaqam { get; set; }
     public int INN { get; set; }
     public string OKONX { get; set; }
-    public int XisobRaqam { get; set; }
-    public int JSHSHIR { get; set; }
+    public string XisobRaqam { get; set; }
+    public string JSHSHIR { get; set; }
     public string Bank { get; set; }
     public string FirmaAdres { get; set; }
 }
