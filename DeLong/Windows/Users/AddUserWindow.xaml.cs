@@ -25,22 +25,42 @@ namespace DeLong.Windows.Users
             string adres = txtAdres.Text.Trim();
             string telegramRaqam = txtTelegramRaqam.Text.Trim();
             string innText = txtINN.Text.Trim();
+            string okonx = txtOKONX.Text.Trim();
+            string xisobRaqamText = txtXisobRaqam.Text.Trim();
+            string jshshirText = txtJSHSHIR.Text.Trim();
+            string bank = txtBank.Text.Trim();
+            string firmaAdres = txtFirmaAdres.Text.Trim();
 
-            // Ma'lumotlarni tekshirish
+            // Majburiy maydonlarni tekshirish
             if (string.IsNullOrWhiteSpace(fio) ||
                 string.IsNullOrWhiteSpace(telefon) ||
                 string.IsNullOrWhiteSpace(adres) ||
                 string.IsNullOrWhiteSpace(telegramRaqam) ||
-                string.IsNullOrWhiteSpace(innText))
+                string.IsNullOrWhiteSpace(innText) ||
+                string.IsNullOrWhiteSpace(okonx) ||
+                string.IsNullOrWhiteSpace(xisobRaqamText) ||
+                string.IsNullOrWhiteSpace(jshshirText) ||
+                string.IsNullOrWhiteSpace(bank) ||
+                string.IsNullOrWhiteSpace(firmaAdres))
             {
                 MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // INN qiymatini int ga aylantirish
+            // INN, Xisob Raqam va JSHSHIR qiymatlarini raqamga aylantirish
             if (!int.TryParse(innText, out int inn))
             {
                 MessageBox.Show("INN faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!int.TryParse(xisobRaqamText, out int xisobRaqam))
+            {
+                MessageBox.Show("Xisob Raqam faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!int.TryParse(jshshirText, out int jshshir))
+            {
+                MessageBox.Show("JSHSHIR faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -51,7 +71,12 @@ namespace DeLong.Windows.Users
                 Telefon = telefon,
                 Adres = adres,
                 TelegramRaqam = telegramRaqam,
-                INN = inn // INN int bo'lishi kerak
+                INN = inn,
+                OKONX = okonx,
+                XisobRaqam = xisobRaqam.ToString(),
+                JSHSHIR = jshshir.ToString(),
+                Bank = bank,
+                FirmaAdres = firmaAdres
             };
 
             try

@@ -15,76 +15,30 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Search Box va Search Button -->
-        <StackPanel 
-            Orientation="Horizontal" 
-            VerticalAlignment="Center" 
-            HorizontalAlignment="Left" 
-            Grid.Row="0" 
-            Margin="10">
-            <TextBox 
-                x:Name="txtSearch" 
-                Width="200" 
-                Height="30" 
-                VerticalAlignment="Center" 
-                Margin="0,0,10,0" 
-                Background="#7A1CAC"
-                Foreground="#EBD3F8"
-                controls:TextBoxHelper.Watermark="Search User"/>
-            <Button 
-                Content="Search" 
-                Width="80" 
-                Height="30"
-                Click="SearchButton_Click"
-                VerticalAlignment="Center"
-                Background="#7A1CAC"
-                Foreground="#EBD3F8"/>
-            <Button 
-                Content="Add" 
-                Width="80" 
-                Height="30" 
-                VerticalAlignment="Center" 
-                Margin="10,0,0,0"
-                Background="#7A1CAC"
-                Foreground="#EBD3F8"
-                Click="AddUserButton_Click"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
+            <TextBox x:Name="txtSearch" Width="200" Height="30" VerticalAlignment="Center" Margin="0,0,10,0" Background="#7A1CAC" Foreground="#EBD3F8" controls:TextBoxHelper.Watermark="Search User"/>
+            <Button Content="Search" Width="80" Height="30" Click="SearchButton_Click" VerticalAlignment="Center" Background="#7A1CAC" Foreground="#EBD3F8"/>
+            <Button Content="Add" Width="80" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Background="#7A1CAC" Foreground="#EBD3F8" Click="AddUserButton_Click"/>
         </StackPanel>
 
-        <!-- Foydalanuvchilar jadvali (User Table) -->
-        <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10"
-          AutoGenerateColumns="False"
-          CanUserAddRows="False"
-          Background="#AD49E1"
-          Foreground="Black">
+        <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#AD49E1" Foreground="Black">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FIO" Binding="{Binding FIO}" Width="*"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="*"/>
                 <DataGridTextColumn Header="Adres" Binding="{Binding Adres}" Width="*"/>
                 <DataGridTextColumn Header="Telegram Raqam" Binding="{Binding TelegramRaqam}" Width="*"/>
                 <DataGridTextColumn Header="INN" Binding="{Binding INN}" Width="100"/>
-
-                <!-- Action ustuni (Edit va Delete tugmalari) -->
+                <DataGridTextColumn Header="OKONX" Binding="{Binding OKONX}" Width="100"/>
+                <DataGridTextColumn Header="Xisob Raqam" Binding="{Binding XisobRaqam}" Width="*"/>
+                <DataGridTextColumn Header="JSHSHIR" Binding="{Binding JSHSHIR}" Width="100"/>
+                <DataGridTextColumn Header="Bank" Binding="{Binding Bank}" Width="*"/>
+                <DataGridTextColumn Header="Firma Manzil" Binding="{Binding FirmaAdres}" Width="*"/>
                 <DataGridTemplateColumn Header="Actions" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <!-- Tahrirlash tugmasi -->
-                                <Button Content="✏️" 
-                                ToolTip="Edit"
-                                Width="30"
-                                Height="30"
-                                Background="LightBlue"
-                                Margin="5,0"
-                                Click="EditButton_Click"/>
-
-                                <!-- O'chirish tugmasi -->
-                                <Button Content="🗑️"
-                                ToolTip="Delete"
-                                Width="30"
-                                Height="30"
-                                Background="Red"
-                                Margin="5,0"
-                                Click="DeleteButton_Click"/>
+                                <Button Content="✏️" ToolTip="Edit" Width="30" Height="30" Background="LightBlue" Margin="5,0" Click="EditButton_Click"/>
+                                <Button Content="🗑️" ToolTip="Delete" Width="30" Height="30" Background="Red" Margin="5,0" Click="DeleteButton_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

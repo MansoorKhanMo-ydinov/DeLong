@@ -7,7 +7,7 @@ namespace DeLong.Windows.Users
 {
     public partial class UserEditWindow : Window
     {
-        AppdbContext _dbContext;// AppDbContext obyektini qo'shish
+        private readonly AppdbContext _dbContext; // AppDbContext obyektini qo'shish
         public User UpdatedUser { get; private set; }
         private readonly User _originalUser; // Asl foydalanuvchi obyektini saqlash
 
@@ -24,10 +24,16 @@ namespace DeLong.Windows.Users
             txtAdres.Text = user.Adres;
             txtTelegramRaqam.Text = user.TelegramRaqam;
             txtINN.Text = user.INN.ToString();
+            txtOKONX.Text = user.OKONX;
+            txtXisobRaqam.Text = user.XisobRaqam.ToString();
+            txtJSHSHIR.Text = user.JSHSHIR.ToString();
+            txtBank.Text = user.Bank;
+            txtFirmaAdres.Text = user.FirmaAdres;
         }
 
         private void EditUserButton_Click(object sender, RoutedEventArgs e)
         {
+            // INN maydonini int formatida o'qish
             if (int.TryParse(txtINN.Text, out int innValue))
             {
                 // Foydalanuvchini yangilash
@@ -36,6 +42,11 @@ namespace DeLong.Windows.Users
                 _originalUser.Adres = txtAdres.Text;
                 _originalUser.TelegramRaqam = txtTelegramRaqam.Text;
                 _originalUser.INN = innValue;
+                _originalUser.OKONX = txtOKONX.Text;
+                _originalUser.XisobRaqam = txtXisobRaqam.Text;
+                _originalUser.JSHSHIR = txtJSHSHIR.Text;
+                _originalUser.Bank = txtBank.Text;
+                _originalUser.FirmaAdres = txtFirmaAdres.Text;
 
                 try
                 {
