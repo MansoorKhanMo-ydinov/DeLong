@@ -113,3 +113,9 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\UserPage.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\UserEditWindow.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\UserEditWindow.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\ProductEditWindow.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Products\ProductPage.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\ProductCreateWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\ProductEditWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Products\ProductPage.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\ProductCreateWindow.baml

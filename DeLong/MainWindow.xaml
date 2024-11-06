@@ -55,7 +55,8 @@
                     Background="#7A1CAC" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
-                    Effect="{StaticResource DefaultDropShadowEffect}">
+                    Effect="{StaticResource DefaultDropShadowEffect}"
+                    MouseDown="ProductsButton_Click">
                     <StackPanel 
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
