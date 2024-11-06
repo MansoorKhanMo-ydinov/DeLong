@@ -1,4 +1,5 @@
-﻿using DeLong.Entities.Users;
+﻿using DeLong.Entities.Products;
+using DeLong.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeLong.DbContexts;
@@ -6,7 +7,7 @@ namespace DeLong.DbContexts;
 public class AppdbContext:DbContext
 {
     public DbSet<User> Users { get; set; }
-
+    public DbSet<Product> Products { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // PostgreSQL ulanish satrini kiriting

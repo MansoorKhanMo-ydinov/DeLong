@@ -35,5 +35,11 @@ namespace DeLong
             // Foydalanuvchilar sahifasini yuklash
             Navigator.Navigate(new Pages.Clients.UserPage());
         }
+
+        private void ProductsButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Navigator.Navigate(new Pages.Products.ProductPage());
+
+        }
     }
 }

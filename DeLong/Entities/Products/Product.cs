@@ -1,6 +1,6 @@
 ﻿namespace DeLong.Entities.Products;
 
-public class Products:Auditable
+public class Product:Auditable
 {
     public string Belgi { get; set; }
     public int Soni { get; set; }
