@@ -8,7 +8,7 @@
         Title="Delong" 
         Height="600" 
         Width="900"
-        Background="#1C1C1E">
+        Background="#493628">
 
     <!-- Define resources for DropShadowEffect -->
     <Window.Resources>
@@ -22,13 +22,13 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left Sidebar (Panel) -->
-        <Grid Grid.Column="0" Background="#2E073F">
+        <Grid Grid.Column="0" Background="#493628">
             <StackPanel Margin="20">
 
                 <!-- Klient Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     MouseDown="UsersButton_Click"
                     Margin="0,0,0,10"
@@ -37,13 +37,10 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                        <Image Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\client.png"
-                               Width="24"
-                               Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Клиент" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -52,7 +49,7 @@
                 <!-- Ombor Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}"
@@ -67,7 +64,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Омбор" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -76,7 +73,7 @@
                 <!-- Kirim Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -90,7 +87,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Кирим" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -99,7 +96,7 @@
                 <!-- Chiqim Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -113,7 +110,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Чиқим" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -122,7 +119,7 @@
                 <!-- Settings Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -136,7 +133,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Settings" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -145,7 +142,7 @@
                 <!-- Information Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -159,7 +156,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Information" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -168,7 +165,7 @@
                 <!-- Exit Section -->
                 <Border 
                     Height="50" 
-                    Background="#7A1CAC" 
+                    Background="#AB886D" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     MouseDown="ExitApplication"
@@ -183,7 +180,7 @@
                         <Label 
                             FontFamily="JetBrains Mono" 
                             Content="Exit" 
-                            Foreground="#EBD3F8" 
+                            Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -193,7 +190,7 @@
         </Grid>
 
         <!-- Main Content Area (Right Side) -->
-        <Grid Grid.Column="1" Background="#382466">
+        <Grid Grid.Column="1" Background="#AB886D">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
     </Grid>

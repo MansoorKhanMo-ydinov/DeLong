@@ -6,39 +6,39 @@
         xmlns:local="clr-namespace:DeLong.Windows.Users"
         mc:Ignorable="d"
         Title="UserEditWindow" Height="650" Width="800">
-    <Grid Background="#2E073F">
+    <Grid Background="#493628">
         <StackPanel Margin="20">
-            <TextBlock Text="FIO" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtFIO" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="FIO" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtFIO" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Telefon" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtTelefon" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Telefon" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtTelefon" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Adres" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtAdres" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Adres" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtAdres" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Telegram Raqam" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtTelegramRaqam" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Telegram Raqam" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtTelegramRaqam" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="INN" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtINN" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="INN" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtINN" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="OKONX" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtOKONX" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="OKONX" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtOKONX" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Xisob Raqam" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtXisobRaqam" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Xisob Raqam" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtXisobRaqam" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="JSHSHIR" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtJSHSHIR" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="JSHSHIR" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtJSHSHIR" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Bank" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtBank" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Bank" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtBank" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Firma Adres" Foreground="#EBD3F8" Margin="0,0,0,5"/>
-            <TextBox x:Name="txtFirmaAdres" Background="#7A1CAC" Foreground="#EBD3F8" Margin="0,0,0,10"/>
+            <TextBlock Text="Firma Adres" Foreground="#E4E0E1" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtFirmaAdres" Background="#AB886D" Foreground="#E4E0E1" Margin="0,0,0,10"/>
 
-            <Button Content="Edit" Click="EditUserButton_Click" Background="#7A1CAC" Foreground="#EBD3F8" Height="30" Margin="0,20,0,0"/>
+            <Button Content="Edit" Click="EditUserButton_Click" Background="#EC8305" Foreground="#DBD3D3" Height="30" Margin="0,20,0,0"/>
         </StackPanel>
     </Grid>
 </Window>
