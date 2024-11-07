@@ -113,3 +113,8 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Clients\UserPage.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\UserEditWindow.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Users\UserEditWindow.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\zh\DeLong.resources.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong.Resourses.Resource.resources
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong.Resourses.Resourse.zh.resources
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\DeLong.csproj.GenerateResource.cache
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\zh\DeLong.resources.dll

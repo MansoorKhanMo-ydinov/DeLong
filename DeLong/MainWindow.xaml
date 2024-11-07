@@ -116,51 +116,6 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Settings Section -->
-                <Border 
-                    Height="50" 
-                    Background="#AB886D" 
-                    CornerRadius="15" 
-                    Margin="0,0,0,10"
-                    Effect="{StaticResource DefaultDropShadowEffect}">
-                    <StackPanel 
-                        Orientation="Horizontal" 
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
-                        <Label 
-                            FontFamily="JetBrains Mono" 
-                            Content="Settings" 
-                            Foreground="#E4E0E1" 
-                            FontSize="18" 
-                            VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Border>
-
-                <!-- Information Section -->
-                <Border 
-                    Height="50" 
-                    Background="#AB886D" 
-                    CornerRadius="15" 
-                    Margin="0,0,0,10"
-                    Effect="{StaticResource DefaultDropShadowEffect}">
-                    <StackPanel 
-                        Orientation="Horizontal" 
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
-                        <Label 
-                            FontFamily="JetBrains Mono" 
-                            Content="Information" 
-                            Foreground="#E4E0E1" 
-                            FontSize="18" 
-                            VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Border>
 
                 <!-- Exit Section -->
                 <Border 
@@ -185,7 +140,6 @@
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
-
             </StackPanel>
         </Grid>
 
