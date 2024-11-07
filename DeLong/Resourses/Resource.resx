@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="WelcomeMessage " xml:space="preserve">
-    <value>欢迎来到Delong!</value>
+    <value>hg</value>
   </data>
-  <data name="ExitButton     " xml:space="preserve">
-    <value>Exit</value>
+  <data name="Exit" xml:space="preserve">
+    <value>Chiqish</value>
     <comment>Settings       </comment>
   </data>
 </root>

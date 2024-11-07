@@ -10,7 +10,6 @@
         Width="900"
         Background="#493628">
 
-    <!-- Define resources for DropShadowEffect -->
     <Window.Resources>
         <DropShadowEffect x:Key="DefaultDropShadowEffect" ShadowDepth="5" Opacity="0.5" BlurRadius="10"/>
     </Window.Resources>
@@ -21,11 +20,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Left Sidebar (Panel) -->
         <Grid Grid.Column="0" Background="#493628">
             <StackPanel Margin="20">
 
-                <!-- Klient Section -->
                 <Border 
                     Height="50" 
                     Background="#AB886D" 
@@ -39,14 +36,13 @@
                         HorizontalAlignment="Center">
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Клиент" 
+                            Content="Mijoz" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Ombor Section -->
                 <Border 
                     Height="50" 
                     Background="#AB886D" 
@@ -58,19 +54,15 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Омбор" 
+                            Content="Ombor" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Kirim Section -->
                 <Border 
                     Height="50" 
                     Background="#AB886D" 
@@ -81,19 +73,15 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Кирим" 
+                            Content="Kirim" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Chiqim Section -->
                 <Border 
                     Height="50" 
                     Background="#AB886D" 
@@ -104,12 +92,9 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Чиқим" 
+                            Content="Chiqim" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
@@ -117,7 +102,6 @@
                 </Border>
 
 
-                <!-- Exit Section -->
                 <Border 
                     Height="50" 
                     Background="#AB886D" 
@@ -129,21 +113,35 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                        <Image 
-                               Width="24"
-                               Height="24"/>
                         <Label 
                             FontFamily="JetBrains Mono" 
-                            Content="Exit" 
+                            Content="Chiqish" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
+                <Border 
+                             Height="50" 
+                             Background="#AB886D" 
+                             CornerRadius="15" 
+                             Margin="0,0,0,10"
+                             Effect="{StaticResource DefaultDropShadowEffect}">
+                    <StackPanel 
+                             Orientation="Horizontal" 
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center">
+                        <Label 
+                             FontFamily="JetBrains Mono" 
+                             Content="Language" 
+                             Foreground="#E4E0E1" 
+                             FontSize="18" 
+                             VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
             </StackPanel>
         </Grid>
 
-        <!-- Main Content Area (Right Side) -->
         <Grid Grid.Column="1" Background="#AB886D">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
