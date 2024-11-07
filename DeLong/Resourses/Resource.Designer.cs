@@ -61,6 +61,15 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mijoz.
+        /// </summary>
+        internal static string Client {
+            get {
+                return ResourceManager.GetString("Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chiqish.
         /// </summary>
         internal static string Exit {
@@ -70,11 +79,20 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hg.
+        ///   Looks up a localized string similar to Til.
         /// </summary>
-        internal static string WelcomeMessage_ {
+        internal static string Language {
             get {
-                return ResourceManager.GetString("WelcomeMessage ", resourceCulture);
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mahsulot.
+        /// </summary>
+        internal static string Product {
+            get {
+                return ResourceManager.GetString("Product", resourceCulture);
             }
         }
     }
