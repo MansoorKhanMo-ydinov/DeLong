@@ -61,16 +61,16 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 退出         .
+        ///   Looks up a localized string similar to Chiqish.
         /// </summary>
-        internal static string ExitButton_____ {
+        internal static string Exit {
             get {
-                return ResourceManager.GetString("ExitButton     ", resourceCulture);
+                return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 欢迎来到Delong!.
+        ///   Looks up a localized string similar to hg.
         /// </summary>
         internal static string WelcomeMessage_ {
             get {
