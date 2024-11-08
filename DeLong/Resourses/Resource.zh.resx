@@ -129,4 +129,10 @@
   <data name="Language" xml:space="preserve">
     <value>语言 </value>
   </data>
+  <data name="Expense" xml:space="preserve">
+    <value>支出 </value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>收入 </value>
+  </data>
 </root>

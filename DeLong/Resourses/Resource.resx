@@ -130,4 +130,11 @@
   <data name="Language" xml:space="preserve">
     <value>Til</value>
   </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Chiqim</value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>Kirim
+</value>
+  </data>
 </root>
