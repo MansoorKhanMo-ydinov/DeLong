@@ -79,6 +79,25 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chiqim.
+        /// </summary>
+        internal static string Expense {
+            get {
+                return ResourceManager.GetString("Expense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kirim
+        ///.
+        /// </summary>
+        internal static string Income {
+            get {
+                return ResourceManager.GetString("Income", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Til.
         /// </summary>
         internal static string Language {

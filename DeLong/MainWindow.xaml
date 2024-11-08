@@ -35,6 +35,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                         <Label 
+                            x:Name="myMijozLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Mijoz" 
                             Foreground="#E4E0E1" 
@@ -55,6 +56,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                         <Label 
+                            x:Name="myProductLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Ombor" 
                             Foreground="#E4E0E1" 
@@ -74,6 +76,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                         <Label 
+                            x:Name="myKirimLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Kirim" 
                             Foreground="#E4E0E1" 
@@ -93,6 +96,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                         <Label 
+                            x:Name="myChiqimLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Chiqim" 
                             Foreground="#E4E0E1" 
@@ -114,6 +118,7 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                         <Label 
+                            x:Name="myExitLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Chiqish" 
                             Foreground="#E4E0E1" 
@@ -122,23 +127,39 @@
                     </StackPanel>
                 </Border>
                 <Border 
-                             Height="50" 
-                             Background="#AB886D" 
-                             CornerRadius="15" 
-                             Margin="0,0,0,10"
-                             Effect="{StaticResource DefaultDropShadowEffect}">
+    Height="50" 
+    Background="#AB886D" 
+    CornerRadius="15" 
+    Margin="0,0,0,10"
+    Effect="{StaticResource DefaultDropShadowEffect}">
+
                     <StackPanel 
-                             Orientation="Horizontal" 
-                             VerticalAlignment="Center"
-                             HorizontalAlignment="Center">
-                        <Label 
-                             FontFamily="JetBrains Mono" 
-                             Content="Language" 
-                             Foreground="#E4E0E1" 
-                             FontSize="18" 
-                             VerticalAlignment="Center"/>
+        Orientation="Horizontal" 
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+                        >
+
+                        <Image
+    Height="24"
+    Width="24"
+    Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\world-grid.png"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"></Image>
+                        <!-- Til tanlash uchun ComboBox -->
+                        <ComboBox 
+            x:Name="languageComboBox"
+            Width="100"
+            SelectionChanged="LanguageAPP"
+            Foreground="#AB886D" 
+            FontFamily="JetBrains Mono" 
+            FontSize="18">
+                            <ComboBoxItem Content="Uzbek" Tag="en-US" />
+                            <ComboBoxItem Content="Chinese" Tag="zh-CN" />
+                        </ComboBox>
+
                     </StackPanel>
                 </Border>
+
             </StackPanel>
         </Grid>
 
