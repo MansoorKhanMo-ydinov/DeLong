@@ -135,4 +135,7 @@
   <data name="Income" xml:space="preserve">
     <value>收入 </value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索 </value>
+  </data>
 </root>
