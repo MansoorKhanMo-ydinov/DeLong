@@ -14,8 +14,6 @@ namespace DeLong
             // Dastlabki sahifani yuklash (agar kerak bo'lsa)
             // Navigator.Navigate(new Pages.Clients.User()); 
         }
-
-        // Exit Application when "Exit" section is clicked
         private void ExitApplication(object sender, MouseButtonEventArgs e)
         {
             if (MessageBox.Show("Ishonchingiz komilmi?", "Chiqish", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
@@ -59,7 +57,6 @@ namespace DeLong
             myMijozLabel.Content = DeLong.Resourses.Resource.Client;
             myKirimLabel.Content = DeLong.Resourses.Resource.Income;
             myChiqimLabel.Content = DeLong.Resourses.Resource.Expense;
-            
         }
 
     }
