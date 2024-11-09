@@ -148,20 +148,41 @@
     HorizontalAlignment="Left"></Image>
                         <!-- Til tanlash uchun ComboBox -->
                         <ComboBox 
-            x:Name="languageComboBox"
-            Width="100"
-            SelectionChanged="LanguageAPP"
-            Foreground="#AB886D" 
-            FontFamily="JetBrains Mono" 
-            FontSize="18">
-                            <Image Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\world-grid.png"
-                                   Height="24"
-                                   Width="24">
-                                
-                            </Image>
-                            <ComboBoxItem Content="Uzbek" Tag="en-US" />
-                            <ComboBoxItem Content="Chinese" Tag="zh-CN" />
+    x:Name="languageComboBox"
+    Width="150"
+    SelectionChanged="LanguageAPP"
+    Foreground="#AB886D" 
+    Background="#1E1E1E"
+    FontFamily="JetBrains Mono" 
+    FontSize="18">
+
+                            <ComboBox.Resources>
+                                <!-- Style for ComboBoxItem -->
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="Foreground" Value="#AB886D" />
+                                    <Setter Property="Background" Value="#333333" />
+                                    <Setter Property="FontFamily" Value="JetBrains Mono" />
+                                    <Setter Property="FontSize" Value="16" />
+                                </Style>
+                            </ComboBox.Resources>
+
+                            <!-- Uzbek ComboBoxItem with Icon -->
+                            <ComboBoxItem Tag="en-US" Background="Black">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\uzbekistan.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Uzbek" Foreground="#ADD8E6" />
+                                </StackPanel>
+                            </ComboBoxItem>
+
+                            <!-- Chinese ComboBoxItem with Icon -->
+                            <ComboBoxItem Tag="zh-CN" Background="Black">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\china.png" Width="16" Height="16" Margin="0,0,5,0"/>
+                                    <TextBlock Text="国" Foreground="#ADD8E6" />
+                                </StackPanel>
+                            </ComboBoxItem>
                         </ComboBox>
+
 
                     </StackPanel>
                 </Border>
