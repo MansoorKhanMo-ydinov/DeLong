@@ -55,6 +55,7 @@
                         Orientation="Horizontal" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
+                        
                         <Label 
                             x:Name="myProductLabel"
                             FontFamily="JetBrains Mono" 
@@ -153,6 +154,11 @@
             Foreground="#AB886D" 
             FontFamily="JetBrains Mono" 
             FontSize="18">
+                            <Image Source="C:\Users\mansu\source\repos\DeLong\DeLong\Assets\Icons\world-grid.png"
+                                   Height="24"
+                                   Width="24">
+                                
+                            </Image>
                             <ComboBoxItem Content="Uzbek" Tag="en-US" />
                             <ComboBoxItem Content="Chinese" Tag="zh-CN" />
                         </ComboBox>
