@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeLong.Windows.Products"
         mc:Ignorable="d"
-        Title="AddProductWindow" Height="450" Width="800">
+        Title="Add Product" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="350">
+            <!-- Belgi Field -->
+            <TextBox x:Name="BelgiTextBox" Margin="10"  Text="{Binding Belgi, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Soni Field -->
+            <TextBox x:Name="SoniTextBox" Margin="10"  Text="{Binding Soni, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Narxi (Sumda) Field -->
+            <TextBox x:Name="NarxiSumdaTextBox" Margin="10"  Text="{Binding NarxiSumda, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Jami Narxi (Sumda) Field -->
+            <TextBox x:Name="JamiNarxiSumdaTextBox" Margin="10"  Text="{Binding JamiNarxiSumda, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Narxi (Dollarda) Field -->
+            <TextBox x:Name="NarxiDollordaTextBox" Margin="10"  Text="{Binding NarxiDollorda, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Jami Narxi (Dollarda) Field -->
+            <TextBox x:Name="JamiNarxiDollardaTextBox" Margin="10"  Text="{Binding JamiNarxiDollarda, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- Save Button -->
+            <Button Content="Save" Margin="10" Command="{Binding SaveCommand}" />
+        </StackPanel>
     </Grid>
 </Window>
