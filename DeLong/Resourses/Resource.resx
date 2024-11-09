@@ -146,4 +146,39 @@
   <data name="Add" xml:space="preserve">
     <value>Qo'shish</value>
   </data>
+  <data name="FIO" xml:space="preserve">
+    <value>FIO</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Adres " xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="Telegram raqam" xml:space="preserve">
+    <value>Telegram raqam</value>
+  </data>
+  <data name="INN" xml:space="preserve">
+    <value>INN</value>
+  </data>
+  <data name="OKONX" xml:space="preserve">
+    <value>OKONX
+</value>
+  </data>
+  <data name="Xisob raqam" xml:space="preserve">
+    <value>Xisob raqam</value>
+  </data>
+  <data name="JSHSHIR " xml:space="preserve">
+    <value>JSHSHIR</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank
+</value>
+  </data>
+  <data name="Firma Adres" xml:space="preserve">
+    <value>Firma adres</value>
+  </data>
+  <data name="Amallar" xml:space="preserve">
+    <value>Action</value>
+  </data>
 </root>
