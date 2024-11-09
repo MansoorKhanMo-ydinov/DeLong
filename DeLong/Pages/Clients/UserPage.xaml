@@ -23,7 +23,7 @@
 
         <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#AB886D" Foreground="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="FIO" Binding="{Binding FIO}" SortMemberPath="FIO" Width="*"/>
+                <DataGridTextColumn x:Name="myFIO" Header="FIO" Binding="{Binding FIO}" SortMemberPath="FIO" Width="*"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="*"/>
                 <DataGridTextColumn Header="Adres" Binding="{Binding Adres}" Width="*"/>
                 <DataGridTextColumn Header="Telegram Raqam" Binding="{Binding TelegramRaqam}" Width="*"/>

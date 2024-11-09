@@ -61,6 +61,15 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Qo&apos;shish.
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mijoz.
         /// </summary>
         internal static string Client {
@@ -103,6 +112,15 @@ namespace DeLong.Resourses {
         internal static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Klientni qidirish.
+        /// </summary>
+        internal static string MySearch {
+            get {
+                return ResourceManager.GetString("MySearch", resourceCulture);
             }
         }
         
