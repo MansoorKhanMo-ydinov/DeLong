@@ -10,6 +10,12 @@
     <Compile Update="Pages\Clients\UserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Products\AddProductWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Products\ProductEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\Users\AddUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +28,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Clients\UserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Products\AddProductWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Products\ProductEditWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Users\AddUserWindow.xaml">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
-4-283185340
+6-588528119
 11901224391
-29-1199248847
+31-1761153511
 2151229847809
-MainWindow.xaml;Pages\Clients\UserPage.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;
+MainWindow.xaml;Pages\Clients\UserPage.xaml;Windows\Products\AddProductWindow.xaml;Windows\Products\ProductEditWindow.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;
 
-False
+True
 
