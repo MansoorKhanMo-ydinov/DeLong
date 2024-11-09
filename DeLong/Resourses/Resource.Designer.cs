@@ -114,5 +114,14 @@ namespace DeLong.Resourses {
                 return ResourceManager.GetString("Product", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qidiruv.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
     }
 }

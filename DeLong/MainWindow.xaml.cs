@@ -59,7 +59,7 @@ namespace DeLong
             myMijozLabel.Content = DeLong.Resourses.Resource.Client;
             myKirimLabel.Content = DeLong.Resourses.Resource.Income;
             myChiqimLabel.Content = DeLong.Resourses.Resource.Expense;
-
+            
         }
 
     }
