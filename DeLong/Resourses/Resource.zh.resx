@@ -144,4 +144,37 @@
   <data name="Add" xml:space="preserve">
     <value>添加</value>
   </data>
+  <data name="FIO" xml:space="preserve">
+    <value>姓名 </value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>电话 </value>
+  </data>
+  <data name="Adres " xml:space="preserve">
+    <value>地址 </value>
+  </data>
+  <data name="Telegram raqam" xml:space="preserve">
+    <value>电报号码</value>
+  </data>
+  <data name="INN" xml:space="preserve">
+    <value>税号</value>
+  </data>
+  <data name="OKONX" xml:space="preserve">
+    <value>行业代码</value>
+  </data>
+  <data name="Xisob raqam" xml:space="preserve">
+    <value>账户号码</value>
+  </data>
+  <data name="JSHSHIR " xml:space="preserve">
+    <value>社会保障号码</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>银行 </value>
+  </data>
+  <data name="Firma Adres" xml:space="preserve">
+    <value>公司地址</value>
+  </data>
+  <data name="Amallar" xml:space="preserve">
+    <value>行动 </value>
+  </data>
 </root>

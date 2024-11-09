@@ -70,6 +70,34 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adres.
+        /// </summary>
+        internal static string Adres_ {
+            get {
+                return ResourceManager.GetString("Adres ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Action.
+        /// </summary>
+        internal static string Amallar {
+            get {
+                return ResourceManager.GetString("Amallar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank
+        ///.
+        /// </summary>
+        internal static string Bank {
+            get {
+                return ResourceManager.GetString("Bank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mijoz.
         /// </summary>
         internal static string Client {
@@ -97,12 +125,48 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FIO.
+        /// </summary>
+        internal static string FIO {
+            get {
+                return ResourceManager.GetString("FIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firma adres.
+        /// </summary>
+        internal static string Firma_Adres {
+            get {
+                return ResourceManager.GetString("Firma Adres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kirim
         ///.
         /// </summary>
         internal static string Income {
             get {
                 return ResourceManager.GetString("Income", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INN.
+        /// </summary>
+        internal static string INN {
+            get {
+                return ResourceManager.GetString("INN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JSHSHIR.
+        /// </summary>
+        internal static string JSHSHIR_ {
+            get {
+                return ResourceManager.GetString("JSHSHIR ", resourceCulture);
             }
         }
         
@@ -125,6 +189,16 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OKONX
+        ///.
+        /// </summary>
+        internal static string OKONX {
+            get {
+                return ResourceManager.GetString("OKONX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mahsulot.
         /// </summary>
         internal static string Product {
@@ -139,6 +213,33 @@ namespace DeLong.Resourses {
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefon.
+        /// </summary>
+        internal static string Telefon {
+            get {
+                return ResourceManager.GetString("Telefon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram raqam.
+        /// </summary>
+        internal static string Telegram_raqam {
+            get {
+                return ResourceManager.GetString("Telegram raqam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xisob raqam.
+        /// </summary>
+        internal static string Xisob_raqam {
+            get {
+                return ResourceManager.GetString("Xisob raqam", resourceCulture);
             }
         }
     }
