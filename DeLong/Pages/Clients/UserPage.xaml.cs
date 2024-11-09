@@ -95,4 +95,24 @@ public partial class UserPage : Page
             }
         }
     }
+
+    private void UpdateLanguage()
+    {
+        // Refresh buttons and other localized content in the DataGrid
+        foreach (var item in userDataGrid.Items)
+        {
+            if (item is User user)  // Replace 'YourDataType' with the actual type of your data
+            {
+                user.FIO = DeLong.Resourses.Resource.Search;
+            }
+        }
+
+        // Manually trigger the update for the UI elements that need localization
+        AddButton1.Content = DeLong.Resourses.Resource.Culture;  // Add button for search
+        MySearch.Content = DeLong.Resourses.Resource.Search;  // Search button
+
+        // If your data context or binding needs a refresh after the language update, you can do so:
+        userDataGrid.Items.Refresh();
+    }
+
 }
