@@ -138,4 +138,10 @@
   <data name="Search" xml:space="preserve">
     <value>搜索 </value>
   </data>
+  <data name="MySearch" xml:space="preserve">
+    <value>语言 </value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
 </root>

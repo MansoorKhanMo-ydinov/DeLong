@@ -140,4 +140,10 @@
   <data name="Search" xml:space="preserve">
     <value>Qidiruv</value>
   </data>
+  <data name="MySearch" xml:space="preserve">
+    <value>Klientni qidirish</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Qo'shish</value>
+  </data>
 </root>
