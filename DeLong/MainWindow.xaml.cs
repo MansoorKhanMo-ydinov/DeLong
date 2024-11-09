@@ -30,15 +30,14 @@ public partial class MainWindow : Window
 
     private void UsersButton_Click(object sender, MouseButtonEventArgs e)
     {
-        Navigator.Navigate(new Pages.Clients.UserPage());
         if (languageComboBox.SelectedItem is ComboBoxItem selectedItem)
         {
             // Tanlangan til kodi orqali madaniyatni o'zgartirish
             string selectedLanguage = selectedItem.Tag.ToString();
             DeLong.Resourses.Resource.Culture = new CultureInfo(selectedLanguage);
-            UpdateLanguage();
-        }
 
+        }
+        Navigator.Navigate(new Pages.Clients.UserPage());
     }
 
     private void LanguageAPP(object sender, SelectionChangedEventArgs e)
