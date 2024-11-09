@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 using DeLong.DbContexts;
 using DeLong.Entities.Users;
@@ -74,8 +75,6 @@ public partial class UserPage : Page
             LoadUsers(); // Foydalanuvchilarni yangidan yuklash
         }
     }
-
-    // Foydalanuvchini tahrirlash
     private async void EditButton_Click(object sender, RoutedEventArgs e)
     {
         if (sender is Button button && button.DataContext is User user)
