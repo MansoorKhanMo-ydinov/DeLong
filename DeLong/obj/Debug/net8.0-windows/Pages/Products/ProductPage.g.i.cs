@@ -93,7 +93,7 @@ namespace DeLong.Pages.Products {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DeLong;component/pages/products/productpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DeLong;V1.0.0.0;component/pages/products/productpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Products\ProductPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
