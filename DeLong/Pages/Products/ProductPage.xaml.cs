@@ -37,17 +37,6 @@ namespace DeLong.Pages.Products
             userDataGrid.ItemsSource = filteredUsers; // Filtrlangan foydalanuvchilarni ko'rsatish
         }
 
-        // Mahsulot qo'shish tugmasi bosilganda ishlaydi
-        private async void AddUserButton_Click(object sender, RoutedEventArgs e)
-        {
-            var userForm = new AddProductWindow(_context); // _context ni o'tkazing
-            if (userForm.ShowDialog() == true)
-            {
-                LoadDataAsync(); // Foydalanuvchilarni yangidan yuklash
-            }
-        }
-
-        // Tahrirlash tugmasi bosilganda ishlaydi
         private async void EditButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.DataContext is Product product)
@@ -70,7 +59,6 @@ namespace DeLong.Pages.Products
             }
         }
 
-        // O'chirish tugmasi bosilganda ishlaydi
         private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (userDataGrid.SelectedItem is Product selectedProduct)
@@ -78,6 +66,15 @@ namespace DeLong.Pages.Products
                 _context.Products.Remove(selectedProduct);
                 await _context.SaveChangesAsync();
                 await LoadDataAsync(); // jadvalni yangilash uchun
+            }
+        }
+
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            var userForm = new AddProductWindow(_context); // _context ni o'tkazing
+            if (userForm.ShowDialog() == true)
+            {
+                LoadDataAsync(); // Foydalanuvchilarni yangidan yuklash
             }
         }
     }
