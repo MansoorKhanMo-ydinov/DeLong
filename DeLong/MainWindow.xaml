@@ -48,6 +48,7 @@
                     Background="#476072" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
+                    MouseDown="Product_Button_Click"
                     Effect="{StaticResource DefaultDropShadowEffect}"
                    >
                     <StackPanel 

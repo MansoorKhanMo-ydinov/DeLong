@@ -75,4 +75,8 @@ public partial class MainWindow : Window
         Navigator.Navigate(_userPage);
     }
 
+    private void Product_Button_Click(object sender, MouseButtonEventArgs e)
+    {
+        Navigator.Navigate(new Pages.Products.ProductPage());
+    }
 }
