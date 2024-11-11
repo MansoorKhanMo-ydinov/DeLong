@@ -31,6 +31,12 @@ public partial class MainWindow : Window
     private void UsersButton_Click(object sender, MouseButtonEventArgs e)
     {
         Navigator.Navigate(new Pages.Clients.UserPage());
+        if (languageComboBox.SelectedItem is ComboBoxItem selectedItem)
+        {
+            string selectedLanguage = selectedItem.Tag.ToString();
+            DeLong.Resourses.Resource.Culture = new CultureInfo(selectedLanguage);
+            UpdateLanguage();
+        }
     }
     
     private void LanguageAPP(object sender, SelectionChangedEventArgs e)
@@ -39,35 +45,36 @@ public partial class MainWindow : Window
         {
             string selectedLanguage = selectedItem.Tag.ToString();
             DeLong.Resourses.Resource.Culture = new CultureInfo(selectedLanguage);
-            _userPage = new UserPage();
-            _userPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.FIO;
-            _userPage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Telefon;
-            _userPage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres_;
-            _userPage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Telegram_raqam;
-            _userPage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.INN;
-            _userPage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.OKONX;
-            _userPage.userDataGrid.Columns[6].Header = DeLong.Resourses.Resource.Xisob_raqam;
-            _userPage.userDataGrid.Columns[7].Header = DeLong.Resourses.Resource.JSHSHIR_;
-            _userPage.userDataGrid.Columns[8].Header = DeLong.Resourses.Resource.Bank;
-            _userPage.userDataGrid.Columns[9].Header = DeLong.Resourses.Resource.Firma_Adres;
-            _userPage.userDataGrid.Columns[10].Header = DeLong.Resourses.Resource.Amallar;
-            _userPage.MySearch.Content = DeLong.Resourses.Resource.Search;
-            _userPage.AddButton1.Content = DeLong.Resourses.Resource.Add;
-            Navigator.Navigate(_userPage);
             UpdateLanguage();
         }
     }
     private void UpdateLanguage()
     {
-       
+        _userPage = new UserPage();
+        _userPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.FIO;
+        _userPage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Telefon;
+        _userPage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres_;
+        _userPage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Telegram_raqam;
+        _userPage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.INN;
+        _userPage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.OKONX;
+        _userPage.userDataGrid.Columns[6].Header = DeLong.Resourses.Resource.Xisob_raqam;
+        _userPage.userDataGrid.Columns[7].Header = DeLong.Resourses.Resource.JSHSHIR_;
+        _userPage.userDataGrid.Columns[8].Header = DeLong.Resourses.Resource.Bank;
+        _userPage.userDataGrid.Columns[9].Header = DeLong.Resourses.Resource.Firma_Adres;
+        _userPage.userDataGrid.Columns[10].Header = DeLong.Resourses.Resource.Amallar;
+        _userPage.MySearch.Content = DeLong.Resourses.Resource.Search;
+        _userPage.AddButton1.Content = DeLong.Resourses.Resource.Add;
         languageComboBox.Text = DeLong.Resourses.Resource.Language; 
         myProductLabel.Content = DeLong.Resourses.Resource.Product; 
         myExitLabel.Content = DeLong.Resourses.Resource.Exit;
         myMijozLabel.Content = DeLong.Resourses.Resource.Client;
         myKirimLabel.Content = DeLong.Resourses.Resource.Income;
         myChiqimLabel.Content = DeLong.Resourses.Resource.Expense;
-    }
+        Navigator.Navigate(_userPage);
 
+       
+    }
+    
     private void Product_Button_Click(object sender, MouseButtonEventArgs e)
     {
         Navigator.Navigate(new Pages.Products.ProductPage());
