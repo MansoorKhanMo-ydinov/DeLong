@@ -8,7 +8,7 @@
         Title="Delong" 
         Height="600" 
         Width="900"
-        Background="#493628">
+        Background="#4A628A">
 
     <Window.Resources>
         <DropShadowEffect x:Key="DefaultDropShadowEffect" ShadowDepth="5" Opacity="0.5" BlurRadius="10"/>
@@ -19,12 +19,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="#493628">
+        <Grid Grid.Column="0" Background="#4A628A">
             <StackPanel Margin="20">
 
                 <Border 
                     Height="50" 
-                    Background="#AB886D" 
+                    Background="#7AB2D3" 
                     CornerRadius="15" 
                     MouseDown="UsersButton_Click"
                     Margin="0,0,0,10"
@@ -45,7 +45,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#AB886D" 
+                    Background="#7AB2D3" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}"
@@ -67,7 +67,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#AB886D" 
+                    Background="#7AB2D3" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -87,7 +87,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#AB886D" 
+                    Background="#7AB2D3" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -108,7 +108,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#AB886D" 
+                    Background="#7AB2D3" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     MouseDown="ExitApplication"
@@ -128,7 +128,7 @@
                 </Border>
                 <Border 
     Height="50" 
-    Background="#AB886D" 
+    Background="#7AB2D3" 
     CornerRadius="15" 
     Margin="0,0,0,10"
     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -150,8 +150,8 @@
     x:Name="languageComboBox"
     Width="150"
     SelectionChanged="LanguageAPP"
-    Foreground="#AB886D" 
-    Background="#1E1E1E"
+    Foreground="#7AB2D3" 
+    Background="#7AB2D3"
     FontFamily="JetBrains Mono" 
     FontSize="18">
 
