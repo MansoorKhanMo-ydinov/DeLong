@@ -1,96 +1,92 @@
 ﻿using System.Windows;
 using DeLong.DbContexts;
 using DeLong.Entities.Products;
+using DeLong.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeLong.Windows.Products
 {
     public partial class AddProductWindow : Window
     {
-        private readonly AppdbContext _dbContext; // DbContext for database access
-        public Product NewProduct { get; private set; } // New product to be added
+        private readonly AppdbContext _dbContext; 
+        public Product NewProduct { get; private set; } 
 
         public AddProductWindow(AppdbContext dbContext)
         {
             InitializeComponent();
-            _dbContext = dbContext; // Initialize DbContext through the constructor
+            _dbContext = dbContext; 
         }
 
-        // "Add Product" button click event handler
         private async void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
-            // Collect product details from input fields
             string belgi = txtBelgi.Text.Trim();
-            string narxiSumdaText = txtNarxisumda.Text.Trim();
-            string narxiDollordaText = txtNarxiDollorda.Text.Trim();
-            string jamiNarxiSumdaText = txtJamiNarxiSumda.Text.Trim();
-            string jamiNarxiDollordaText = txtJaminarxiDollorda.Text.Trim();
-
-            // Check if required fields are filled
+            string soni = txtSoni.Text.Trim();
+            string narxisumda = txtNarxisumda.Text.Trim();
+            string narxidollorda = txtNarxiDollorda.Text.Trim();
+            string jaminarxisumda = txtJamiNarxiSumda.Text.Trim();
+            string jaminarxidollorda = txtJaminarxiDollorda .Text.Trim();
+            
             if (string.IsNullOrWhiteSpace(belgi) ||
-                string.IsNullOrWhiteSpace(narxiSumdaText) ||
-                string.IsNullOrWhiteSpace(narxiDollordaText) ||
-                string.IsNullOrWhiteSpace(jamiNarxiSumdaText) ||
-                string.IsNullOrWhiteSpace(jamiNarxiDollordaText))
+                string.IsNullOrWhiteSpace(soni) ||
+                string.IsNullOrWhiteSpace(narxisumda) ||
+                string.IsNullOrWhiteSpace(narxidollorda) ||
+                string.IsNullOrWhiteSpace(jaminarxisumda) ||
+                string.IsNullOrWhiteSpace(jaminarxidollorda))
             {
-                MessageBox.Show("Please fill in all required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Convert text fields to numerical values
-            if (!decimal.TryParse(narxiSumdaText, out decimal narxiSumda))
+            // INN, Xisob Raqam va JSHSHIR qiymatlarini raqamga aylantirish
+            if (!int.TryParse(soni, out int inn))
             {
-                MessageBox.Show("Narxi (sumda) must be a valid decimal number.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("INN faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            if (!decimal.TryParse(narxiDollordaText, out decimal narxiDollorda))
+            if (!int.TryParse(narxisumda, out int xisobRaqam))
             {
-                MessageBox.Show("Narxi (dollorda) must be a valid decimal number.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Xisob Raqam faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            if (!decimal.TryParse(jamiNarxiSumdaText, out decimal jamiNarxiSumda))
+            if (!int.TryParse(narxidollorda, out int jshshir))
             {
-                MessageBox.Show("Jami Narxi (sumda) must be a valid decimal number.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-            if (!decimal.TryParse(jamiNarxiDollordaText, out decimal jamiNarxiDollorda))
-            {
-                MessageBox.Show("Jami Narxi (dollorda) must be a valid decimal number.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("JSHSHIR faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Create a new product instance
+            // Yangi foydalanuvchini yaratish
             NewProduct = new Product
             {
                 Belgi = belgi,
-                NarxiSumda = narxiSumda,
-                NarxiDollorda = narxiDollorda,
-                JamiNarxiSumda = jamiNarxiSumda,
-                JamiNarxiDollarda = jamiNarxiDollorda
+                Soni = int.Parse(soni),
+                NarxiSumda = Decimal.Parse(narxisumda),
+                NarxiDollorda = Decimal.Parse(narxidollorda),
+                JamiNarxiSumda = Decimal.Parse(jaminarxisumda),
+                JamiNarxiDollarda = Decimal.Parse(jaminarxidollorda),
             };
 
             try
             {
-                // Add new product to the database
+                // Yangi foydalanuvchini ma'lumotlar bazasiga qo'shish
                 _dbContext.Products.Add(NewProduct);
-                await _dbContext.SaveChangesAsync(); // Asynchronously save changes
+                await _dbContext.SaveChangesAsync(); // O'zgarishlarni asinxron saqlash
 
-                // Show a success message
-                MessageBox.Show("Product added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                // Foydalanuvchini muvaffaqiyatli qo'shilgani haqida xabar ko'rsatish
+                MessageBox.Show("Foydalanuvchi muvaffaqiyatli qo'shildi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Close the window with a successful result
+                // Oynani yopish
                 this.DialogResult = true;
                 this.Close();
             }
             catch (DbUpdateException dbEx)
             {
-                // Handle database update errors
-                MessageBox.Show($"Database error: {dbEx.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Ma'lumotlar bazasi bilan bog'liq xatoliklar uchun maxsus xabar
+                MessageBox.Show($"Ma'lumotlar bazasi xatoligi: {dbEx.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                // Show any other errors
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                // Xato xabarini ko'rsatish
+                MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
