@@ -8,7 +8,7 @@
         Title="Delong" 
         Height="600" 
         Width="900"
-        Background="#4A628A">
+        Background="White">
 
     <Window.Resources>
         <DropShadowEffect x:Key="DefaultDropShadowEffect" ShadowDepth="5" Opacity="0.5" BlurRadius="10"/>
@@ -19,12 +19,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="#4A628A">
+        <Grid Grid.Column="0" Background="#334257">
             <StackPanel Margin="20">
 
                 <Border 
                     Height="50" 
-                    Background="#7AB2D3" 
+                    Background="#476072" 
                     CornerRadius="15" 
                     MouseDown="UsersButton_Click"
                     Margin="0,0,0,10"
@@ -37,7 +37,7 @@
                             x:Name="myMijozLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Mijoz" 
-                            Foreground="#E4E0E1" 
+                            Foreground="#EEEEEE" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -45,7 +45,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#7AB2D3" 
+                    Background="#476072" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}"
@@ -59,7 +59,7 @@
                             x:Name="myProductLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Ombor" 
-                            Foreground="#E4E0E1" 
+                            Foreground="#EEEEEE" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -67,7 +67,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#7AB2D3" 
+                    Background="#476072" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -87,7 +87,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#7AB2D3" 
+                    Background="#476072" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -108,7 +108,7 @@
 
                 <Border 
                     Height="50" 
-                    Background="#7AB2D3" 
+                    Background="#476072" 
                     CornerRadius="15" 
                     Margin="0,0,0,10"
                     MouseDown="ExitApplication"
@@ -128,7 +128,7 @@
                 </Border>
                 <Border 
     Height="50" 
-    Background="#7AB2D3" 
+    Background="#476072" 
     CornerRadius="15" 
     Margin="0,0,0,10"
     Effect="{StaticResource DefaultDropShadowEffect}">
@@ -151,7 +151,7 @@
     Width="150"
     SelectionChanged="LanguageAPP"
     Foreground="#7AB2D3" 
-    Background="#7AB2D3"
+    Background="#476072"
     FontFamily="JetBrains Mono" 
     FontSize="18">
 
@@ -189,7 +189,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Column="1" Background="#AB886D">
+        <Grid Grid.Column="1" Background="#548CA8">
             <Frame x:Name="Navigator" Margin="20,20,20,20" NavigationUIVisibility="Hidden" Navigated="Navigator_Navigated"/>
         </Grid>
     </Grid>
