@@ -6,28 +6,24 @@
         xmlns:local="clr-namespace:DeLong.Windows.Products"
         mc:Ignorable="d"
         Title="Add Product" Height="450" Width="800">
-    <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="350">
-            <!-- Belgi Field -->
-            <TextBox x:Name="BelgiTextBox" Margin="10"  Text="{Binding Belgi, UpdateSourceTrigger=PropertyChanged}" />
+    <Grid Background="#334257">
+        <StackPanel Margin="20" VerticalAlignment="Top">
+            <TextBlock Text="Belgi" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtBelgi" Background="#476072" Foreground="#EEEEEE"/>
 
-            <!-- Soni Field -->
-            <TextBox x:Name="SoniTextBox" Margin="10"  Text="{Binding Soni, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Narxisumda" Foreground="#EEEEEE" Margin="0,20,0,5"/>
+            <TextBox x:Name="txtNarxisumda" Background="#476072" Foreground="#EEEEEE"/>
 
-            <!-- Narxi (Sumda) Field -->
-            <TextBox x:Name="NarxiSumdaTextBox" Margin="10"  Text="{Binding NarxiSumda, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Narxi dollorda" Foreground="#EEEEEE" Margin="0,20,0,5"/>
+            <TextBox x:Name="txtNarxiDollorda" Background="#476072" Foreground="#EEEEEE"/>
 
-            <!-- Jami Narxi (Sumda) Field -->
-            <TextBox x:Name="JamiNarxiSumdaTextBox" Margin="10"  Text="{Binding JamiNarxiSumda, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Jami narxi sumda " Foreground="#EEEEEE" Margin="0,20,0,5"/>
+            <TextBox x:Name="txtJamiNarxiSumda" Background="#476072" Foreground="#EEEEEE"/>
 
-            <!-- Narxi (Dollarda) Field -->
-            <TextBox x:Name="NarxiDollordaTextBox" Margin="10"  Text="{Binding NarxiDollorda, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Jami narxi dollorda" Foreground="#EEEEEE" Margin="0,20,0,5"/>
+            <TextBox x:Name="txtJaminarxiDollorda" Background="#476072" Foreground="#EEEEEE"/>
 
-            <!-- Jami Narxi (Dollarda) Field -->
-            <TextBox x:Name="JamiNarxiDollardaTextBox" Margin="10"  Text="{Binding JamiNarxiDollarda, UpdateSourceTrigger=PropertyChanged}" />
-
-            <!-- Save Button -->
-            <Button Content="Save" Margin="10" Command="{Binding SaveCommand}" />
+            <Button Content="Add Product" Click="AddProductButton_Click" Background="#548CA8" Foreground="#EEEEEE" Height="30" Margin="0,20,0,0"/>
         </StackPanel>
     </Grid>
 </Window>

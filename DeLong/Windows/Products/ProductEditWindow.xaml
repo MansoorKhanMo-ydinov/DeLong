@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeLong.Windows.Products"
         mc:Ignorable="d"
-        Title="ProductEditWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Edit Product" Height="450" Width="800">
+    <Grid Background="#334257">
+        <StackPanel Margin="20" VerticalAlignment="Top">
+            <TextBlock Text="Belgi" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtBelgi" Background="#476072" Foreground="#EEEEEE" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Narxi (sumda)" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtNarxisumda" Background="#476072" Foreground="#EEEEEE" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Narxi (dollorda)" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtNarxiDollorda" Background="#476072" Foreground="#EEEEEE" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Jami narxi (sumda)" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtJamiNarxiSumda" Background="#476072" Foreground="#EEEEEE" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Jami narxi (dollorda)" Foreground="#EEEEEE" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtJaminarxiDollorda" Background="#476072" Foreground="#EEEEEE" Margin="0,0,0,10"/>
+
+            <Button Content="Edit Product" Click="EditProductButton_Click" Background="#548CA8" Foreground="#EEEEEE" Height="30" Margin="0,20,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>
