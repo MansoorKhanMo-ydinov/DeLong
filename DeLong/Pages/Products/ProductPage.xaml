@@ -22,12 +22,12 @@
 
         <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Belgi"  Binding="{Binding Belgi}" SortMemberPath="Belgi" Foreground="Black" Width="*"/>
-                <DataGridTextColumn  Header="Soni" Binding="{Binding Soni}" Foreground="Black" Width="*"/>
-                <DataGridTextColumn  Header="NarxiSumda" Binding="{Binding NarxiSumda}" Foreground="Black" Width="*"/>
-                <DataGridTextColumn  Header="Narxi dollorda" Binding="{Binding NarxiDollorda}" Foreground="Black" Width="*"/>
-                <DataGridTextColumn  Header="Jami narxi sumda" Binding="{Binding JamiNarxiSumda}" Foreground="Black" Width="100"/>
-                <DataGridTextColumn Header="Jami narxi dollorda" Binding="{Binding JamiNarxiDollorda}" Foreground="Black" Width="100"/>
+                <DataGridTextColumn  Header="Belgi"  Binding="{Binding Belgi}" SortMemberPath="Belgi" Width="*"/>
+                <DataGridTextColumn  Header="Soni" Binding="{Binding Soni}"  Width="*"/>
+                <DataGridTextColumn  Header="NarxiSumda" Binding="{Binding NarxiSumda}"  Width="*"/>
+                <DataGridTextColumn  Header="Narxi dollorda" Binding="{Binding NarxiDollorda}"  Width="*"/>
+                <DataGridTextColumn  Header="Jami narxi sumda" Binding="{Binding JamiNarxiSumda}"  Width="*"/>
+                <DataGridTextColumn Header="Jami narxi dollorda" Binding="{Binding JamiNarxiDollorda}" Foreground="Yellow" Width="*"/>
                 <DataGridTemplateColumn  Header="Actions" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
