@@ -27,7 +27,7 @@
                 <DataGridTextColumn  Header="NarxiSumda" Binding="{Binding NarxiSumda}"  Width="*"/>
                 <DataGridTextColumn  Header="Narxi dollorda" Binding="{Binding NarxiDollorda}"  Width="*"/>
                 <DataGridTextColumn  Header="Jami narxi sumda" Binding="{Binding JamiNarxiSumda}"  Width="*"/>
-                <DataGridTextColumn Header="Jami narxi dollorda" Binding="{Binding JamiNarxiDollorda}" Foreground="Yellow" Width="*"/>
+                <DataGridTextColumn Header="Jami narxi dollorda" Binding="{Binding JamiNarxiDollarda, TargetNullValue='0'}" Foreground="Black" Width="*"/>
                 <DataGridTemplateColumn  Header="Actions" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

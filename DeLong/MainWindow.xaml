@@ -59,7 +59,7 @@
                         <Label 
                             x:Name="myProductLabel"
                             FontFamily="JetBrains Mono" 
-                            Content="Ombor" 
+                            Content="Mahsulot" 
                             Foreground="#EEEEEE" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
