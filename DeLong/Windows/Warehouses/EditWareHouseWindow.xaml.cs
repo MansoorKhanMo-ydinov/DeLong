@@ -1,27 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using DeLong.DbContexts;
+using DeLong.Entities.Warehouses;
+using Microsoft.EntityFrameworkCore;
 
-namespace DeLong.Windows.Warehouses
+namespace DeLong.Windows.Users
 {
-    /// <summary>
-    /// Interaction logic for EditWareHouseWindow.xaml
-    /// </summary>
-    public partial class EditWareHouseWindow : Window
+    public partial class EditWarehouseWindow : Window
     {
-        public EditWareHouseWindow()
+        private readonly AppdbContext _dbContext; // AppDbContext obyektini qo'shish
+        public Warehouse UpdatedWarehouse { get; private set; }
+        private readonly Warehouse _originalWarehouse; // Asl foydalanuvchi obyektini saqlash
+
+        public EditWarehouseWindow(AppdbContext dbContext, Warehouse warehouse)
         {
-            InitializeComponent();
+            EditWarehouseWindow.InitialComponent();
+
+            _dbContext = dbContext;
+            _originalWarehouse = warehouse;
+
+            // Foydalanuvchi ma'lumotlarini formaga yuklash
+            txtWarehouseID.Text = warehouse.;
+            txtTelefon.Text = user.Telefon;
+            txtAdres.Text = user.Adres;
+            txtTelegramRaqam.Text = user.TelegramRaqam;
+            txtINN.Text = user.INN.ToString();
+            txtOKONX.Text = user.OKONX;
+            txtXisobRaqam.Text = user.XisobRaqam.ToString();
+            txtJSHSHIR.Text = user.JSHSHIR.ToString();
+            txtBank.Text = user.Bank;
+            txtFirmaAdres.Text = user.FirmaAdres;
+        }
+
+        private void EditUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            // INN maydonini int formatida o'qish
+            if (int.TryParse(txtINN.Text, out int innValue))
+            {
+                // Foydalanuvchini yangilash
+                _originalUser.FIO = txtFIO.Text;
+                _originalUser.Telefon = txtTelefon.Text;
+                _originalUser.Adres = txtAdres.Text;
+                _originalUser.TelegramRaqam = txtTelegramRaqam.Text;
+                _originalUser.INN = innValue;
+                _originalUser.OKONX = txtOKONX.Text;
+                _originalUser.XisobRaqam = txtXisobRaqam.Text;
+                _originalUser.JSHSHIR = txtJSHSHIR.Text;
+                _originalUser.Bank = txtBank.Text;
+                _originalUser.FirmaAdres = txtFirmaAdres.Text;
+
+                try
+                {
+                    // Ma'lumotlar bazasiga o'zgarishlarni saqlash
+                    _dbContext.Entry(_originalUser).State = EntityState.Modified;
+                    _dbContext.SaveChanges();
+
+                    MessageBox.Show("Foydalanuvchi muvaffaqiyatli yangilandi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    this.DialogResult = true; // Oynani yopishdan oldin natijani ko'rsatish
+                    this.Close(); // Oynani yopish
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Iltimos, INN maydoniga to'g'ri raqam kiriting!", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
