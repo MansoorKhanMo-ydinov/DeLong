@@ -38,7 +38,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button x:Name="Edit_Button" Content="✏️" ToolTip="Edit" Width="30" Height="30" Background="LightBlue" Margin="5,0" Click="EditButton_Click"/>
-                                <Button x:Name="Delete_Button" Content="🗑️" ToolTip="Delete" Width="30" Height="30" Background="Red" Margin="5,0" Click="DeleteButton_Click"/>
+                                <Button x:Name="Delete_Button" Content="🗑️" ToolTip="Delete" Width="30" Height="30" Background="LightBlue" Margin="5,0" Click="DeleteButton_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
