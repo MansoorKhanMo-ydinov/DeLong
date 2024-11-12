@@ -4,12 +4,14 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DeLong.Pages.Clients;
+using DeLong.Pages.Products;
 
 namespace DeLong;
 
 public partial class MainWindow : Window
 {
     private UserPage _userPage;
+    private ProductPage _productPage;
     public MainWindow()
     {
         InitializeComponent();
@@ -67,6 +69,16 @@ public partial class MainWindow : Window
         _userPage.userDataGrid.Columns[9].Header = DeLong.Resourses.Resource.Firma_Adres;
         _userPage.userDataGrid.Columns[10].Header = DeLong.Resourses.Resource.Amallar;
 
+        _productPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.FIO;
+        _productPage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Telefon;
+        _productPage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres_;
+        _productPage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Telegram_raqam;
+        _productPage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.INN;
+        _productPage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.OKONX;
+        _productPage.userDataGrid.Columns[6].Header = DeLong.Resourses.Resource.Xisob_raqam;
+
+        _productPage.MySearch.Content = DeLong.Resourses.Resource.Search;
+        _productPage.AddButton2.Content = DeLong.Resourses.Resource.Add;
         // UserPage dagi bosh elementlarni yangilash
         _userPage.MySearch.Content = DeLong.Resourses.Resource.Search;
         _userPage.AddButton1.Content = DeLong.Resourses.Resource.Add;
@@ -86,7 +98,17 @@ public partial class MainWindow : Window
 
     private void Product_Button_Click(object sender, MouseButtonEventArgs e)
     {
-        Navigator.Navigate(new Pages.Products.ProductPage());
+        if (_productPage == null)
+        {
+            _productPage = new ProductPage(); // UserPage faqat bir marta yaratiladi
+        }
+
+        // Tanlangan tilni qo'llash
+        DeLong.Resourses.Resource.Culture = new CultureInfo(_currentLanguage); // Tanlangan tilni qo'llash
+        UpdateLanguage(); // Matnlarni yangilash
+
+        // UserPage sahifasiga o'tish
+        Navigator.Navigate(_productPage);
     }
 
     private void UsersButton_Click(object sender, MouseButtonEventArgs e)
