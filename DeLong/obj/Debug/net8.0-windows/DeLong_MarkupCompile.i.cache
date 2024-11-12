@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
 9-984093314
 11901224391
-361807510860
+39-1734088677
 216840932263
 MainWindow.xaml;Pages\Clients\UserPage.xaml;Pages\Products\ProductPage.xaml;Windows\Products\AddProductWindow.xaml;Windows\Products\ProductEditWindow.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;Windows\Warehouses\AddWarehouseWindow.xaml;Windows\Warehouses\EditWareHouseWindow.xaml;
 
-True
+False
 

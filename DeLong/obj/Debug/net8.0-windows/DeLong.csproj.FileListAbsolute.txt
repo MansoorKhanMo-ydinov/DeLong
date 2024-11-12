@@ -125,3 +125,7 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Product
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\AddProductWindow.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Products\ProductEditWindow.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\bin\Debug\net8.0-windows\Surviveplus.WpfLocalization.dll
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Warehouses\AddWarehouseWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Warehouses\EditWareHouseWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Warehouses\AddWarehouseWindow.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Warehouses\EditWareHouseWindow.baml
