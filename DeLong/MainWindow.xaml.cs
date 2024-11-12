@@ -132,4 +132,8 @@ public partial class MainWindow : Window
         Navigator.Navigate(_userPage);
     }
 
+    private void Ombor_Button(object sender, MouseButtonEventArgs e)
+    {
+
+    }
 }

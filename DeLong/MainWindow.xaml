@@ -65,6 +65,27 @@
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
+                <Border 
+    Height="50" 
+    Background="#476072" 
+    CornerRadius="15" 
+    Margin="0,0,0,10"
+    Effect="{StaticResource DefaultDropShadowEffect}"
+   >
+                    <StackPanel 
+        Orientation="Horizontal" 
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        MouseDown="Ombor_Button">
+
+                        <Label 
+            FontFamily="JetBrains Mono" 
+            Content="Ombor" 
+            Foreground="#EEEEEE" 
+            FontSize="18" 
+            VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
                 <Border 
                     Height="50" 
