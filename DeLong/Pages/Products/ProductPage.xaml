@@ -22,18 +22,18 @@
 
         <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Uid="Belgi" Header="Belgi" Binding="{Binding FIO}" SortMemberPath="FIO" Width="*"/>
-                <DataGridTextColumn x:Uid="Soni" Header="Soni" Binding="{Binding Telefon}" Width="*"/>
-                <DataGridTextColumn x:Uid="NarxiSumda" Header="NarxiSumda" Binding="{Binding Adres}" Width="*"/>
-                <DataGridTextColumn x:Uid="NarxiDollorda" Header="Narxi dollorda" Binding="{Binding TelegramRaqam}" Width="*"/>
-                <DataGridTextColumn x:Uid="JamiNarxiSumda" Header="Jami narxi sumda" Binding="{Binding INN}" Width="100"/>
-                <DataGridTextColumn x:Uid="JamiNarxiDollorda" Header="Jamai narxi dollorda" Binding="{Binding OKONX}" Width="100"/>
-                <DataGridTemplateColumn x:Uid="ActionsColumn" Header="Actions" Width="150">
+                <DataGridTextColumn  Binding="{Binding Belgi}" SortMemberPath="FIO" Foreground="Black" Width="*"/>
+                <DataGridTextColumn  Binding="{Binding Soni}" Foreground="Black" Width="*"/>
+                <DataGridTextColumn  Header="NarxiSumda" Binding="{Binding NarxiSumda}" Foreground="Black" Width="*"/>
+                <DataGridTextColumn  Header="Narxi dollorda" Binding="{Binding NarxiDollorda}" Foreground="Black" Width="*"/>
+                <DataGridTextColumn  Header="Jami narxi sumda" Binding="{Binding JamiNarxiSumda}" Foreground="Black" Width="100"/>
+                <DataGridTextColumn  Header="Jamai narxi dollorda" Binding="{Binding JamiNarxiDollorda}" Foreground="Black" Width="100"/>
+                <DataGridTemplateColumn  Header="Actions" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button x:Uid="Edit_Button" x:Name="Edit_Button" Content="✏️" ToolTip="Edit" Width="30" Height="30" Background="LightBlue" Margin="5,0" Click="EditButton_Click"/>
-                                <Button x:Uid="Delete_Button" x:Name="Delete_Button" Content="🗑️" ToolTip="Delete" Width="30" Height="30" Background="Red" Margin="5,0" Click="DeleteButton_Click"/>
+                                <Button x:Uid="Edit_Button" x:Name="Edit_Button" Content="✏️" ToolTip="Edit" Width="30" Height="30" Background="LightBlue" Foreground="Black" Margin="5,0" Click="EditButton_Click"/>
+                                <Button x:Uid="Delete_Button" x:Name="Delete_Button" Content="🗑️" ToolTip="Delete" Width="30" Height="30" Background="LightBlue" Foreground="Black" Margin="5,0" Click="DeleteButton_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

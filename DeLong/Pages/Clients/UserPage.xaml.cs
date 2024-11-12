@@ -9,30 +9,27 @@ namespace DeLong.Pages.Clients;
 
 public partial class UserPage : Page
 {
-    private readonly AppdbContext _context; // DbContext ni private sifatida e'lon qilamiz
+    private readonly AppdbContext _context;
 
     public UserPage()
     {
         InitializeComponent();
-        _context = new AppdbContext(); // AppDbContext ni yaratish
-        LoadUsers(); // Foydalanuvchilarni yuklash
+        _context = new AppdbContext(); 
+        LoadUsers(); 
     }
 
-    // Foydalanuvchilarni yuklash
     private async void LoadUsers()
     {
         try
         {
-            var users = await _context.Users.ToListAsync(); // Ma'lumotlar bazasidan foydalanuvchilarni yuklash
-            userDataGrid.ItemsSource = users; // DataGridga foydalanuvchilarni ulash
+            var users = await _context.Users.ToListAsync(); 
+            userDataGrid.ItemsSource = users; 
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Foydalanuvchilarni yuklashda xato: {ex.Message}");
         }
     }
-
-    // Foydalanuvchini o'chirish
     private async void DeleteButton_Click(object sender, RoutedEventArgs e)
     {
         if (sender is Button button && button.DataContext is User user)
@@ -42,8 +39,8 @@ public partial class UserPage : Page
                 try
                 {
                     _context.Users.Remove(user);
-                    await _context.SaveChangesAsync(); // O'zgarishlarni saqlash
-                    LoadUsers(); // Foydalanuvchilarni yangilash
+                    await _context.SaveChangesAsync(); 
+                    LoadUsers(); 
                 }
                 catch (Exception ex)
                 {
@@ -52,8 +49,6 @@ public partial class UserPage : Page
             }
         }
     }
-
-    // Qidirish funksiyasi
     private async void SearchButton_Click(object sender, RoutedEventArgs e)
     {
         string searchText = txtSearch.Text.ToLower();
@@ -62,31 +57,29 @@ public partial class UserPage : Page
             .Where(u => u.FIO.ToLower().Contains(searchText) || u.Telefon.Contains(searchText))
             .ToListAsync();
 
-        userDataGrid.ItemsSource = filteredUsers; // Filtrlangan foydalanuvchilarni ko'rsatish
+        userDataGrid.ItemsSource = filteredUsers; 
     }
-
-    // Yangi foydalanuvchi qo'shish
     private void AddUserButton_Click(object sender, RoutedEventArgs e)
     {
-        var userForm = new AddUserWindow(_context); // _context ni o'tkazing
+        var userForm = new AddUserWindow(_context); 
         if (userForm.ShowDialog() == true)
         {
-            LoadUsers(); // Foydalanuvchilarni yangidan yuklash
+            LoadUsers(); 
         }
     }
     private async void EditButton_Click(object sender, RoutedEventArgs e)
     {
         if (sender is Button button && button.DataContext is User user)
         {
-            var editWindow = new UserEditWindow(_context, user); // UserEditWindow ni ochish
+            var editWindow = new UserEditWindow(_context, user); 
 
             if (editWindow.ShowDialog() == true)
             {
                 try
                 {
-                    _context.Users.Update(editWindow.UpdatedUser); // Yangilangan foydalanuvchini ma'lumotlar bazasida yangilash
-                    await _context.SaveChangesAsync(); // O'zgarishlarni saqlash
-                    LoadUsers(); // Foydalanuvchilar ro'yxatini yangilash
+                    _context.Users.Update(editWindow.UpdatedUser); 
+                    await _context.SaveChangesAsync();
+                    LoadUsers(); 
                 }
                 catch (Exception ex)
                 {
