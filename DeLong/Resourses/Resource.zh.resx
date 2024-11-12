@@ -177,4 +177,22 @@
   <data name="Amallar" xml:space="preserve">
     <value>行动 </value>
   </data>
+  <data name="Label" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="Price in Sums" xml:space="preserve">
+    <value>价格（苏姆）</value>
+  </data>
+  <data name="Price in Dollars" xml:space="preserve">
+    <value>价格（美元)</value>
+  </data>
+  <data name="Total Price in Sums" xml:space="preserve">
+    <value>总价（苏姆)</value>
+  </data>
+  <data name="Total Price Dollors" xml:space="preserve">
+    <value>总价（美元)</value>
+  </data>
 </root>

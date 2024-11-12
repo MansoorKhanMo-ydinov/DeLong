@@ -171,6 +171,15 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Belgi.
+        /// </summary>
+        internal static string Label {
+            get {
+                return ResourceManager.GetString("Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Til.
         /// </summary>
         internal static string Language {
@@ -199,11 +208,38 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Narxi Dollorda.
+        /// </summary>
+        internal static string Price_in_Dollars {
+            get {
+                return ResourceManager.GetString("Price in Dollars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Narxi Sumda.
+        /// </summary>
+        internal static string Price_in_Sums {
+            get {
+                return ResourceManager.GetString("Price in Sums", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mahsulot.
         /// </summary>
         internal static string Product {
             get {
                 return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soni.
+        /// </summary>
+        internal static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
             }
         }
         
@@ -231,6 +267,24 @@ namespace DeLong.Resourses {
         internal static string Telegram_raqam {
             get {
                 return ResourceManager.GetString("Telegram raqam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jami narxi dollorda.
+        /// </summary>
+        internal static string Total_Price_Dollors {
+            get {
+                return ResourceManager.GetString("Total Price Dollors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jami narxi sumda.
+        /// </summary>
+        internal static string Total_Price_in_Sums {
+            get {
+                return ResourceManager.GetString("Total Price in Sums", resourceCulture);
             }
         }
         

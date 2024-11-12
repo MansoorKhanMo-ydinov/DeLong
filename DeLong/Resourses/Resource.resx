@@ -181,4 +181,22 @@
   <data name="Amallar" xml:space="preserve">
     <value>Action</value>
   </data>
+  <data name="Label" xml:space="preserve">
+    <value>Belgi</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Soni</value>
+  </data>
+  <data name="Price in Sums" xml:space="preserve">
+    <value>Narxi Sumda</value>
+  </data>
+  <data name="Price in Dollars" xml:space="preserve">
+    <value>Narxi Dollorda</value>
+  </data>
+  <data name="Total Price in Sums" xml:space="preserve">
+    <value>Jami narxi sumda</value>
+  </data>
+  <data name="Total Price Dollors" xml:space="preserve">
+    <value>Jami narxi dollorda</value>
+  </data>
 </root>
