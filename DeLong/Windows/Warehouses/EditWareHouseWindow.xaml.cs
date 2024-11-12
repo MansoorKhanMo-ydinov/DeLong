@@ -3,70 +3,75 @@ using DeLong.DbContexts;
 using DeLong.Entities.Warehouses;
 using Microsoft.EntityFrameworkCore;
 
-namespace DeLong.Windows.Users
+namespace DeLong.Windows.Warehouses
 {
     public partial class EditWarehouseWindow : Window
     {
-        private readonly AppdbContext _dbContext; // AppDbContext obyektini qo'shish
-        public Warehouse UpdatedWarehouse { get; private set; }
-        private readonly Warehouse _originalWarehouse; // Asl foydalanuvchi obyektini saqlash
+        private readonly AppdbContext _dbContext;
+        private readonly int _warehouseId;
+        private Warehouse _warehouse;
 
-        public EditWarehouseWindow(AppdbContext dbContext, Warehouse warehouse)
+        public EditWarehouseWindow(int warehouseId, AppdbContext dbContext)
         {
-            EditWarehouseWindow.InitialComponent();
-
+            InitializeComponent();
             _dbContext = dbContext;
-            _originalWarehouse = warehouse;
-
-            // Foydalanuvchi ma'lumotlarini formaga yuklash
-            txtWarehouseID.Text = warehouse.;
-            txtTelefon.Text = user.Telefon;
-            txtAdres.Text = user.Adres;
-            txtTelegramRaqam.Text = user.TelegramRaqam;
-            txtINN.Text = user.INN.ToString();
-            txtOKONX.Text = user.OKONX;
-            txtXisobRaqam.Text = user.XisobRaqam.ToString();
-            txtJSHSHIR.Text = user.JSHSHIR.ToString();
-            txtBank.Text = user.Bank;
-            txtFirmaAdres.Text = user.FirmaAdres;
+            _warehouseId = warehouseId;
+            LoadWarehouseData();
         }
 
-        private void EditUserButton_Click(object sender, RoutedEventArgs e)
+        private void LoadWarehouseData()
         {
-            // INN maydonini int formatida o'qish
-            if (int.TryParse(txtINN.Text, out int innValue))
+            // Fetch warehouse from database based on ID
+            _warehouse = _dbContext.Warehouses
+                .AsNoTracking()
+                .FirstOrDefault(w => w.Id == _warehouseId);
+
+            if (_warehouse == null)
             {
-                // Foydalanuvchini yangilash
-                _originalUser.FIO = txtFIO.Text;
-                _originalUser.Telefon = txtTelefon.Text;
-                _originalUser.Adres = txtAdres.Text;
-                _originalUser.TelegramRaqam = txtTelegramRaqam.Text;
-                _originalUser.INN = innValue;
-                _originalUser.OKONX = txtOKONX.Text;
-                _originalUser.XisobRaqam = txtXisobRaqam.Text;
-                _originalUser.JSHSHIR = txtJSHSHIR.Text;
-                _originalUser.Bank = txtBank.Text;
-                _originalUser.FirmaAdres = txtFirmaAdres.Text;
-
-                try
-                {
-                    // Ma'lumotlar bazasiga o'zgarishlarni saqlash
-                    _dbContext.Entry(_originalUser).State = EntityState.Modified;
-                    _dbContext.SaveChanges();
-
-                    MessageBox.Show("Foydalanuvchi muvaffaqiyatli yangilandi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    this.DialogResult = true; // Oynani yopishdan oldin natijani ko'rsatish
-                    this.Close(); // Oynani yopish
-                }
-                catch (DbUpdateException ex)
-                {
-                    MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                MessageBox.Show("Warehouse not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Close();
+                return;
             }
-            else
+
+            // Populate fields with data
+            txtWarehouseID.Text = _warehouse.Id.ToString();
+            txtName.Text = _warehouse.Name;
+            txtAddress.Text = _warehouse.Adres;
+            txtCreatedAt.Text = _warehouse.CreatedAt.ToString("g");
+        }
+
+        private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Input validation
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                MessageBox.Show("Iltimos, INN maydoniga to'g'ri raqam kiriting!", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please fill out all fields.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                // Reload warehouse from the database to avoid concurrency issues
+                _warehouse = _dbContext.Warehouses.FirstOrDefault(w => w.Id == _warehouseId);
+                if (_warehouse == null)
+                {
+                    MessageBox.Show("Warehouse no longer exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Close();
+                    return;
+                }
+
+                // Update fields
+                _warehouse.Name = txtName.Text;
+                _warehouse.Adres = txtAddress.Text;
+                _warehouse.UpdatedAt = DateTime.Now;
+
+                _dbContext.SaveChanges();
+                MessageBox.Show("Warehouse updated successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
