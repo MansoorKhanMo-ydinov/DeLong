@@ -28,6 +28,9 @@
     <Compile Update="Windows\Warehouses\AddWarehouseWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\Warehouses\EditWareHouseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Warehouses\AddWarehouseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Warehouses\EditWareHouseWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
