@@ -17,15 +17,11 @@ namespace DeLong.Pages.Products
             _context = new AppdbContext();
             LoadDataAsync();
         }
-
-        // Ma'lumotlarni yuklash funksiyasi
         private async Task LoadDataAsync()
         {
             var products = await _context.Products.ToListAsync();
             userDataGrid.ItemsSource = products;
         }
-
-        // Qidirish tugmasi bosilganda ishlaydi
         private async void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             string searchText = txtSearch.Text.ToLower();
@@ -34,22 +30,22 @@ namespace DeLong.Pages.Products
                 .Where(u => u.Belgi.ToLower().Contains(searchText))
                 .ToListAsync();
 
-            userDataGrid.ItemsSource = filteredUsers; // Filtrlangan foydalanuvchilarni ko'rsatish
+            userDataGrid.ItemsSource = filteredUsers; 
         }
 
         private async void EditButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.DataContext is Product product)
             {
-                var editWindow = new ProductEditWindow(_context, product); // UserEditWindow ni ochish
+                var editWindow = new ProductEditWindow(_context, product); 
 
                 if (editWindow.ShowDialog() == true)
                 {
                     try
                     {
-                        _context.Products.Update(editWindow.UpdatedProduct); // Yangilangan foydalanuvchini ma'lumotlar bazasida yangilash
-                        await _context.SaveChangesAsync(); // O'zgarishlarni saqlash
-                        LoadDataAsync(); // Foydalanuvchilar ro'yxatini yangilash
+                        _context.Products.Update(editWindow.UpdatedProduct); 
+                        await _context.SaveChangesAsync();
+                        LoadDataAsync(); 
                     }
                     catch (Exception ex)
                     {
@@ -65,16 +61,16 @@ namespace DeLong.Pages.Products
             {
                 _context.Products.Remove(selectedProduct);
                 await _context.SaveChangesAsync();
-                await LoadDataAsync(); // jadvalni yangilash uchun
+                await LoadDataAsync(); 
             }
         }
 
         private void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
-            var userForm = new AddProductWindow(_context); // _context ni o'tkazing
+            var userForm = new AddProductWindow(_context); 
             if (userForm.ShowDialog() == true)
             {
-                LoadDataAsync(); // Foydalanuvchilarni yangidan yuklash
+                LoadDataAsync(); 
             }
         }
     }

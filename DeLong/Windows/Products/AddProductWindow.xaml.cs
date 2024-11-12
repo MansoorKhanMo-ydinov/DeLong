@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using DeLong.DbContexts;
 using DeLong.Entities.Products;
-using DeLong.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeLong.Windows.Products
@@ -40,17 +39,17 @@ namespace DeLong.Windows.Products
             // INN, Xisob Raqam va JSHSHIR qiymatlarini raqamga aylantirish
             if (!int.TryParse(soni, out int inn))
             {
-                MessageBox.Show("INN faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             if (!int.TryParse(narxisumda, out int xisobRaqam))
             {
-                MessageBox.Show("Xisob Raqam faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             if (!int.TryParse(narxidollorda, out int jshshir))
             {
-                MessageBox.Show("JSHSHIR faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
