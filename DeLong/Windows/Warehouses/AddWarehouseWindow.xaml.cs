@@ -1,87 +1,77 @@
 ﻿using System.Windows;
 using DeLong.DbContexts;
+using DeLong.Entities.Users;
 using DeLong.Entities.Warehouses;
 using Microsoft.EntityFrameworkCore;
 
-namespace DeLong.Windows.Warehouses
-{
-    public partial class AddWarehouseWindow : Window
-    {
-        private readonly AppdbContext _dbContext; // AppDbContext uchun private xususiyat
-        public Warehouse NewWarehouse { get; private set; } // Yangi ombor
+namespace DeLong.Windows.Warehouses;
 
-        public AddWarehouseWindow(AppdbContext dbContext)
+public partial class AddWarehouseWindow : Window
+{
+    private readonly AppdbContext _dbContext; // AppDbContext uchun private xususiyat
+    public Warehouse NewWareHouse { get; private set; } // Yangi foydalanuvchi
+
+    public AddWarehouseWindow(AppdbContext dbContext)
+    {
+        InitializeComponent();
+        _dbContext = dbContext; // DbContext ni konstruktor orqali oling
+    }
+
+    // "Add User" tugmasi bosilganda
+    private async void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Foydalanuvchi ma'lumotlarini olish
+        string id = txtWarehouseID.Text.Trim();
+        string name = txtName.Text.Trim();
+        string adres = txtAddress.Text.Trim();
+        // Majburiy maydonlarni tekshirish
+        if (string.IsNullOrWhiteSpace(name) ||
+            string.IsNullOrWhiteSpace(id) ||
+            string.IsNullOrWhiteSpace(adres))
         {
-            InitializeComponent();
-            _dbContext = dbContext; // DbContext ni konstruktor orqali oling
+            MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
         }
 
-        // "Add Warehouse" tugmasi bosilganda
-        private async void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
+        // INN, Xisob Raqam va JSHSHIR qiymatlarini raqamga aylantirish
+        if (!int.TryParse(id, out int inn))
         {
-            // Ombor ma'lumotlarini olish
-            string id = txtWarehouseID.Text.Trim();
-            string name = txtName.Text.Trim();
-            string address = txtAddress.Text.Trim();
-            string createdAtText = txtCreatedAt.Text.Trim();
-            string updatedAtText = txtUpdatedAt.Text.Trim();
+            MessageBox.Show("INN faqat raqam bo'lishi kerak.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+        
+        // Yangi foydalanuvchini yaratish
+        NewWareHouse = new Warehouse
+        {
+            Id=int.Parse(id),
+            Name = name,
+            Adres = adres,
+            CreatedAt =DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+        };
 
-            // Majburiy maydonlarni tekshirish
-            if (string.IsNullOrWhiteSpace(id) || 
-                string.IsNullOrWhiteSpace(name) ||
-                string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(createdAtText) ||
-                string.IsNullOrWhiteSpace(updatedAtText))
-            {
-                MessageBox.Show("Iltimos, barcha maydonlarni to'ldiring.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+        try
+        {
+            // Yangi foydalanuvchini ma'lumotlar bazasiga qo'shish
+            _dbContext.Warehouses.Add(NewWareHouse);
+            await _dbContext.SaveChangesAsync(); // O'zgarishlarni asinxron saqlash
 
-            // CreatedAt va UpdatedAt ni sana formatiga o'tkazish
-            if (!DateTime.TryParse(createdAtText, out DateTime createdAt))
-            {
-                MessageBox.Show("Created At maydoniga to'g'ri sana formatini kiriting.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-            if (!DateTime.TryParse(updatedAtText, out DateTime updatedAt))
-            {
-                MessageBox.Show("Updated At maydoniga to'g'ri sana formatini kiriting.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            // Foydalanuvchini muvaffaqiyatli qo'shilgani haqida xabar ko'rsatish
+            MessageBox.Show("Foydalanuvchi muvaffaqiyatli qo'shildi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Yangi omborni yaratish
-            NewWarehouse = new Warehouse
-            {
-                Id = int.Parse(id),
-                Name = name,
-                Adres = address,
-                CreatedAt = createdAt,
-                UpdatedAt = updatedAt
-            };
-
-            try
-            {
-                // Yangi omborni ma'lumotlar bazasiga qo'shish
-                _dbContext.Warehouses.Add(NewWarehouse);
-                await _dbContext.SaveChangesAsync(); // O'zgarishlarni asinxron saqlash
-
-                // Omborni muvaffaqiyatli qo'shilgani haqida xabar ko'rsatish
-                MessageBox.Show("Ombor muvaffaqiyatli qo'shildi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                // Oynani yopish
-                this.DialogResult = true;
-                this.Close();
-            }
-            catch (DbUpdateException dbEx)
-            {
-                // Ma'lumotlar bazasi bilan bog'liq xatoliklar uchun maxsus xabar
-                MessageBox.Show($"Ma'lumotlar bazasi xatoligi: {dbEx.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (Exception ex)
-            {
-                // Xato xabarini ko'rsatish
-                MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            // Oynani yopish
+            this.DialogResult = true;
+            this.Close();
+        }
+        catch (DbUpdateException dbEx)
+        {
+            // Ma'lumotlar bazasi bilan bog'liq xatoliklar uchun maxsus xabar
+            MessageBox.Show($"Ma'lumotlar bazasi xatoligi: {dbEx.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (Exception ex)
+        {
+            // Xato xabarini ko'rsatish
+            MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

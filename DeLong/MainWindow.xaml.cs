@@ -3,8 +3,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using DeLong.Entities.Warehouses;
 using DeLong.Pages.Clients;
 using DeLong.Pages.Products;
+using DeLong.Pages.Warehouses;
 
 namespace DeLong;
 
@@ -12,6 +14,7 @@ public partial class MainWindow : Window
 {
     private UserPage _userPage;
     private ProductPage _productPage;
+    private WarehousePage _wareHousePage;
     public MainWindow()
     {
         InitializeComponent();
@@ -59,6 +62,10 @@ public partial class MainWindow : Window
         {
             _productPage = new ProductPage();
         }
+        if (_wareHousePage == null)
+        {
+            _wareHousePage = new WarehousePage();
+        }
 
         // UserPage ichidagi elementlarning matnlarini yangilash
         _userPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.FIO;
@@ -84,6 +91,14 @@ public partial class MainWindow : Window
 
         _productPage.MySearch.Content = DeLong.Resourses.Resource.Search;
         _productPage.AddButton2.Content = DeLong.Resourses.Resource.Add;
+
+        _wareHousePage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.Label;
+        _wareHousePage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Quantity;
+        _wareHousePage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Price_in_Sums;
+        _wareHousePage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Price_in_Dollars;
+        _wareHousePage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.Total_Price_in_Sums;
+        _wareHousePage.WarehouseSearch.Content = DeLong.Resourses.Resource.Search;
+        _wareHousePage.AddWarehouseButton.Content = DeLong.Resourses.Resource.Add;
         // UserPage dagi bosh elementlarni yangilash
         _userPage.MySearch.Content = DeLong.Resourses.Resource.Search;
         _userPage.AddButton1.Content = DeLong.Resourses.Resource.Add;
@@ -134,6 +149,16 @@ public partial class MainWindow : Window
 
     private void Ombor_Button(object sender, MouseButtonEventArgs e)
     {
+        if (_wareHousePage == null)
+        {
+            _wareHousePage = new WarehousePage(); // UserPage faqat bir marta yaratiladi
+        }
 
+        // Tanlangan tilni qo'llash
+        DeLong.Resourses.Resource.Culture = new CultureInfo(_currentLanguage); // Tanlangan tilni qo'llash
+        UpdateLanguage(); // Matnlarni yangilash
+
+        // UserPage sahifasiga o'tish
+        Navigator.Navigate(_wareHousePage);
     }
 }
