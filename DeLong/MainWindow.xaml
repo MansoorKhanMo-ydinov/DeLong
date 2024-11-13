@@ -102,6 +102,7 @@
                             x:Name="myKirimLabel"
                             FontFamily="JetBrains Mono" 
                             Content="Kirim" 
+                            MouseDown="Kirim_Button"
                             Foreground="#E4E0E1" 
                             FontSize="18" 
                             VerticalAlignment="Center"/>
@@ -120,6 +121,7 @@
                             HorizontalAlignment="Center">
                         <Label 
                             x:Name="myChiqimLabel"
+                            MouseDown="Chqim_Button"
                             FontFamily="JetBrains Mono" 
                             Content="Chiqim" 
                             Foreground="#E4E0E1" 

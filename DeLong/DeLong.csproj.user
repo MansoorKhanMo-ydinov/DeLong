@@ -10,6 +10,12 @@
     <Compile Update="Pages\Clients\UserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Expences\Chiqim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Incomes\Kirim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Products\ProductPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +46,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Clients\UserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Expences\Chiqim.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Incomes\Kirim.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Products\ProductPage.xaml">
