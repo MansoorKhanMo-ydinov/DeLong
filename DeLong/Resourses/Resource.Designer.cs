@@ -70,6 +70,15 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manzil.
+        /// </summary>
+        internal static string Adres {
+            get {
+                return ResourceManager.GetString("Adres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adres.
         /// </summary>
         internal static string Adres_ {
@@ -107,6 +116,15 @@ namespace DeLong.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yaratilgan Vaqt.
+        /// </summary>
+        internal static string CreatedAt {
+            get {
+                return ResourceManager.GetString("CreatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chiqish.
         /// </summary>
         internal static string Exit {
@@ -139,6 +157,15 @@ namespace DeLong.Resourses {
         internal static string Firma_Adres {
             get {
                 return ResourceManager.GetString("Firma Adres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        internal static string ID {
+            get {
+                return ResourceManager.GetString("ID", resourceCulture);
             }
         }
         
@@ -194,6 +221,15 @@ namespace DeLong.Resourses {
         internal static string MySearch {
             get {
                 return ResourceManager.GetString("MySearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nomi.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -285,6 +321,24 @@ namespace DeLong.Resourses {
         internal static string Total_Price_in_Sums {
             get {
                 return ResourceManager.GetString("Total Price in Sums", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yangilangan vaqt.
+        /// </summary>
+        internal static string UpdatedAt {
+            get {
+                return ResourceManager.GetString("UpdatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ombor.
+        /// </summary>
+        internal static string WareHouse {
+            get {
+                return ResourceManager.GetString("WareHouse", resourceCulture);
             }
         }
         

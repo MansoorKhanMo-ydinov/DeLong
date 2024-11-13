@@ -91,11 +91,12 @@ public partial class MainWindow : Window
         _productPage.MySearch.Content = DeLong.Resourses.Resource.Search;
         _productPage.AddButton2.Content = DeLong.Resourses.Resource.Add;
 
-        _wareHousePage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.Label;
-        _wareHousePage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Quantity;
-        _wareHousePage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Price_in_Sums;
-        _wareHousePage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Price_in_Dollars;
-        _wareHousePage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.Total_Price_in_Sums;
+        _wareHousePage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.ID;
+        _wareHousePage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Name;
+        _wareHousePage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres;
+        _wareHousePage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.CreatedAt;
+        _wareHousePage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.UpdatedAt;
+        _wareHousePage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.Amallar;
         _wareHousePage.WarehouseSearch.Content = DeLong.Resourses.Resource.Search;
         _wareHousePage.AddWarehouseButton.Content = DeLong.Resourses.Resource.Add;
         // UserPage dagi bosh elementlarni yangilash
@@ -106,6 +107,7 @@ public partial class MainWindow : Window
         languageComboBox.Text = DeLong.Resourses.Resource.Language;
         myProductLabel.Content = DeLong.Resourses.Resource.Product;
         myExitLabel.Content = DeLong.Resourses.Resource.Exit;
+        myWarehouse.Content = DeLong.Resourses.Resource.WareHouse;
         myMijozLabel.Content = DeLong.Resourses.Resource.Client;
         myKirimLabel.Content = DeLong.Resourses.Resource.Income;
         myChiqimLabel.Content = DeLong.Resourses.Resource.Expense;

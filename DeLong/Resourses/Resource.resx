@@ -199,4 +199,22 @@
   <data name="Total Price Dollors" xml:space="preserve">
     <value>Jami narxi dollorda</value>
   </data>
+  <data name="ID" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nomi</value>
+  </data>
+  <data name="Adres" xml:space="preserve">
+    <value>Manzil</value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>Yaratilgan Vaqt</value>
+  </data>
+  <data name="UpdatedAt" xml:space="preserve">
+    <value>Yangilangan vaqt</value>
+  </data>
+  <data name="WareHouse" xml:space="preserve">
+    <value>Ombor</value>
+  </data>
 </root>
