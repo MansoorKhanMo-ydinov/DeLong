@@ -195,4 +195,22 @@
   <data name="Total Price Dollors" xml:space="preserve">
     <value>总价（美元)</value>
   </data>
+  <data name="ID" xml:space="preserve">
+    <value>编号 </value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称 </value>
+  </data>
+  <data name="Adres" xml:space="preserve">
+    <value>地址 </value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>创建时间 </value>
+  </data>
+  <data name="UpdatedAt" xml:space="preserve">
+    <value>更新时间 </value>
+  </data>
+  <data name="WareHouse" xml:space="preserve">
+    <value>仓库 </value>
+  </data>
 </root>
