@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using DeLong.Entities.Warehouses;
 using DeLong.Pages.Clients;
 using DeLong.Pages.Products;
 using DeLong.Pages.Warehouses;
