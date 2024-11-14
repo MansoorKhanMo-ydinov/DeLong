@@ -10,10 +10,10 @@
     <Compile Update="Pages\Clients\UserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Expences\Chiqim.xaml.cs">
+    <Compile Update="Pages\Expences\ChiqimPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Incomes\Kirim.xaml.cs">
+    <Compile Update="Pages\Incomes\KirimPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Products\ProductPage.xaml.cs">
@@ -48,10 +48,10 @@
     <Page Update="Pages\Clients\UserPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Expences\Chiqim.xaml">
+    <Page Update="Pages\Expences\ChiqimPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Incomes\Kirim.xaml">
+    <Page Update="Pages\Incomes\KirimPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Products\ProductPage.xaml">
