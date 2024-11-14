@@ -9,6 +9,9 @@
       Title="KirimPage">
 
     <Grid Background="Aqua">
+        <Label Content="KIRIM">
+            
+        </Label>
         
     </Grid>
 </Page>
