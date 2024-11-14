@@ -4,5 +4,6 @@
     {
         public string Ombornomi{ get; set; }
         public string Yetkazuvchi { get; set; }
+        public int JamiSOni { get; set; }
     }
 }
