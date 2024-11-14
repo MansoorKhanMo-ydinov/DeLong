@@ -9,6 +9,8 @@
       Title="ChiqimPage">
 
     <Grid Background="Aqua">
-        
+        <Label Content="Chiqim">
+            
+        </Label>
     </Grid>
 </Page>
