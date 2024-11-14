@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DeLong.Entities.Incomes
+﻿namespace DeLong.Entities.Incomes
 {
-    internal class Kirim
+    public class Kirim : Auditable
     {
+        public string Ombornomi{ get; set; }
+        public string Yetkazuvchi { get; set; }
     }
 }
