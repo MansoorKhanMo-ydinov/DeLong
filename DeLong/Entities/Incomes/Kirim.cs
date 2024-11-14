@@ -6,6 +6,6 @@
         public string Yetkazuvchi { get; set; }
         public int JamiSoni { get; set; }
         public int Jaminarxi { get; set; }
-
+        
     }
 }
