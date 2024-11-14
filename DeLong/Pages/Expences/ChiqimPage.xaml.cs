@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DeLong.Pages.Incomes
+namespace DeLong.Pages.Expences
 {
     /// <summary>
-    /// Interaction logic for Kirim.xaml
+    /// Interaction logic for ChiqimPage.xaml
     /// </summary>
-    public partial class Kirim : Page
+    public partial class ChiqimPage : Page
     {
-        public Kirim()
+        public ChiqimPage()
         {
             InitializeComponent();
         }

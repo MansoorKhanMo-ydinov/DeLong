@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DeLong.Pages.Clients;
+using DeLong.Pages.Expences;
+using DeLong.Pages.Incomes;
 using DeLong.Pages.Products;
 using DeLong.Pages.Warehouses;
 
@@ -12,8 +14,10 @@ namespace DeLong;
 public partial class MainWindow : Window
 {
     private UserPage _userPage;
+    private KirimPage _kirimPage;
     private ProductPage _productPage;
     private WarehousePage _wareHousePage;
+    private ChiqimPage _chiqimPage;
     public MainWindow()
     {
         InitializeComponent();
@@ -65,7 +69,14 @@ public partial class MainWindow : Window
         {
             _wareHousePage = new WarehousePage();
         }
-
+        if (_kirimPage == null)
+        {
+            _kirimPage = new KirimPage();
+        }
+        if (_chiqimPage == null)
+        {
+            _chiqimPage = new ChiqimPage();
+        }
         // UserPage ichidagi elementlarning matnlarini yangilash
         _userPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.FIO;
         _userPage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Telefon;
@@ -165,11 +176,31 @@ public partial class MainWindow : Window
 
     private void Chqim_Button(object sender, MouseButtonEventArgs e)
     {
-        Navigator.Navigate(_contentLoaded);
+        if (_chiqimPage == null)
+        {
+            _chiqimPage = new ChiqimPage(); // UserPage faqat bir marta yaratiladi
+        }
+
+        // Tanlangan tilni qo'llash
+        DeLong.Resourses.Resource.Culture = new CultureInfo(_currentLanguage); // Tanlangan tilni qo'llash
+        UpdateLanguage(); // Matnlarni yangilash
+
+        // UserPage sahifasiga o'tish
+        Navigator.Navigate(_chiqimPage);
     }
 
     private void Kirim_Button(object sender, MouseButtonEventArgs e)
     {
-        Navigator.Navigate(_contentLoaded);
+        if (_kirimPage == null)
+        {
+            _kirimPage = new KirimPage(); // UserPage faqat bir marta yaratiladi
+        }
+
+        // Tanlangan tilni qo'llash
+        DeLong.Resourses.Resource.Culture = new CultureInfo(_currentLanguage); // Tanlangan tilni qo'llash
+        UpdateLanguage(); // Matnlarni yangilash
+
+        // UserPage sahifasiga o'tish
+        Navigator.Navigate(_kirimPage);
     }
 }
