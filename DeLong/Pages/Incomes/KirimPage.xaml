@@ -19,11 +19,11 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
             <TextBox x:Name="txtSearch" Width="200" Height="30" VerticalAlignment="Center" Margin="0,0,10,0" Background="#476072" Foreground="#EEEEEE" />
             <Button x:Name="MySearch" Content="Search" Width="80" Height="30" Background="#476072" Foreground="#EEEEEE" />
-            <Button x:Name="AddButton" Content="Add" Width="80" Height="30" Background="#476072" Foreground="#EEEEEE" />
+            <Button x:Name="AddButton" Content="Add" Width="80" Height="30" Background="#476072" Click="Add_Button" Foreground="#EEEEEE" />
         </StackPanel>
 
         <!-- Main Data Grid -->
-        <DataGrid x:Name="kirimDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
+        <DataGrid x:Name="kirimDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black" ItemsSource="{Binding KirimList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="t/r" Binding="{Binding TR}" Width="*"/>
                 <DataGridTextColumn Header="Ombor Nomi" Binding="{Binding OmborNomi}" Width="*"/>
