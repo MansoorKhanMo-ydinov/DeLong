@@ -9,7 +9,7 @@ public class Kirim : Auditable
     public string Yetkazuvchi { get; set; }
     public int JamiSoni { get; set; }
     public int Jaminarxi { get; set; }
-    public Inform Inform { get; set; }
+    public List<Inform> Inform { get; set; }
     public Role Role { get; set; }
     
 }
