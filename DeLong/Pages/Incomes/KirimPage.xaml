@@ -8,10 +8,51 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KirimPage">
 
-    <Grid Background="Aqua">
-        <Label Content="KIRIM">
-            
-        </Label>
-        
+    <Grid Background="#334257">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <!-- Search and Add Buttons -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
+            <TextBox x:Name="txtSearch" Width="200" Height="30" VerticalAlignment="Center" Margin="0,0,10,0" Background="#476072" Foreground="#EEEEEE" />
+            <Button x:Name="MySearch" Content="Search" Width="80" Height="30" Background="#476072" Foreground="#EEEEEE" />
+            <Button x:Name="AddButton" Content="Add" Width="80" Height="30" Background="#476072" Foreground="#EEEEEE" />
+        </StackPanel>
+
+        <!-- Main Data Grid -->
+        <DataGrid x:Name="kirimDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="t/r" Binding="{Binding TR}" Width="*"/>
+                <DataGridTextColumn Header="Ombor Nomi" Binding="{Binding OmborNomi}" Width="*"/>
+                <DataGridTextColumn Header="Yetkazuvchi" Binding="{Binding Yetkazuvchi}" Width="*"/>
+                <DataGridTextColumn Header="Jami Narxi" Binding="{Binding JamiNarxi}" Width="100"/>
+                <DataGridTextColumn Header="Jami Soni" Binding="{Binding JamiSoni}" Width="100"/>
+                <DataGridTemplateColumn Header="Inform" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Batafsil" Click="ShowDetails_Click" Width="80" Height="30" Background="#476072" Foreground="#EEEEEE"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Detailed Product Information Grid (Hidden Initially) -->
+        <DataGrid x:Name="DetailDataGrid" Grid.Row="2" Margin="10" Visibility="Collapsed" AutoGenerateColumns="False" Background="#476072" Foreground="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="t/r" Binding="{Binding TR}" Width="*" />
+                <DataGridTextColumn Header="Tovar nomi" Binding="{Binding TovarNomi}" Width="*"/>
+                <DataGridTextColumn Header="Soni" Binding="{Binding Soni}" Width="100"/>
+                <DataGridTextColumn Header="Sotib olish narxi" Binding="{Binding SotibNarxi}" Width="100"/>
+                <DataGridTextColumn Header="Kirim narxi" Binding="{Binding KirimNarxi}" Width="100"/>
+                <DataGridTextColumn Header="%" Binding="{Binding Percent}" Width="100"/>
+                <DataGridTextColumn Header="Sotish narxi" Binding="{Binding SotishNarxi}" Width="100"/>
+                <DataGridTextColumn Header="Sotish summasi" Binding="{Binding SotishSummasi}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
