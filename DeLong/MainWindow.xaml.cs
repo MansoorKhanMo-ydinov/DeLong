@@ -162,4 +162,9 @@ public partial class MainWindow : Window
         // UserPage sahifasiga o'tish
         Navigator.Navigate(_wareHousePage);
     }
+
+    private void Kirim_button(object sender, MouseButtonEventArgs e)
+    {
+        Navigator.Navigate(new Pages.Kirims.KirimPage());
+    }
 }

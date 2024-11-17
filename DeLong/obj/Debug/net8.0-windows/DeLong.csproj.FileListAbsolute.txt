@@ -133,3 +133,7 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\WareHou
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\WareHouses\WareHousePage.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\AddKirimWindow.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\AddKirimWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Kirims\KirimPage.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\Kirims\KirimPage.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\EditKirimWindow.g.cs
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\EditKirimWindow.baml
