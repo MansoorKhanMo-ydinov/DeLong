@@ -85,7 +85,7 @@ namespace DeLong.Pages.Warehouses {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DeLong;V1.0.0.0;component/pages/warehouses/warehousepage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DeLong;component/pages/warehouses/warehousepage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\WareHouses\WareHousePage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
