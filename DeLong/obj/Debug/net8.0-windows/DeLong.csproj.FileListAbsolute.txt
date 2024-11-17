@@ -131,3 +131,5 @@ C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Wareh
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Warehouses\EditWareHouseWindow.baml
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\WareHouses\WareHousePage.g.cs
 C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Pages\WareHouses\WareHousePage.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\AddKirimWindow.baml
+C:\Users\mansu\source\repos\DeLong\DeLong\obj\Debug\net8.0-windows\Windows\Kirims\AddKirimWindow.g.cs
