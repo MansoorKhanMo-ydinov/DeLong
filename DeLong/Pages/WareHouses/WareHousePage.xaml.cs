@@ -14,11 +14,9 @@ namespace DeLong.Pages.Warehouses
         public WarehousePage()
         {
             InitializeComponent();
-            _context = new AppdbContext(); // _context ni avval yaratamiz
-            LoadWarehouseData(); // Keyin ma’lumotlarni yuklash
+            _context = new AppdbContext(); 
+            LoadWarehouseData(); 
         }
-
-        // Method to load warehouse data into the DataGrid
         private async void LoadWarehouseData()
         {
             try
@@ -31,8 +29,6 @@ namespace DeLong.Pages.Warehouses
                 MessageBox.Show($"Ombor ma'lumotlarini yuklashda xatolik: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        // Event handler for the Search button click
         private void SearchWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
             string searchQuery = txtSearchWarehouse.Text.Trim();
@@ -48,19 +44,14 @@ namespace DeLong.Pages.Warehouses
 
             userDataGrid.ItemsSource = filteredWarehouses;
         }
-
-        // Event handler for the Add button click
         private void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
-            // Yangi ombor qo‘shish oynasini ochish
             AddWarehouseWindow addWarehouseWindow = new AddWarehouseWindow(_context);
             if (addWarehouseWindow.ShowDialog() == true)
             {
-                LoadWarehouseData(); // Yangi ombor qo‘shilgandan keyin ma’lumotlarni qayta yuklash
+                LoadWarehouseData(); 
             }
         }
-
-        // Event handler for Edit button click within the DataGrid
         private async void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.DataContext is Warehouse warehouse)
@@ -86,8 +77,6 @@ namespace DeLong.Pages.Warehouses
                 MessageBox.Show("Tahrirlash uchun ombor tanlanmagan.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
-        // Event handler for Delete button click within the DataGrid
         private async void DeleteWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.DataContext is Warehouse selectedWarehouse)
