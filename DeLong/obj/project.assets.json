@@ -665,19 +665,6 @@
           }
         }
       },
-      "Surviveplus.WpfLocalization/1.0.4.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Surviveplus.WpfLocalization.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Surviveplus.WpfLocalization.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -1989,22 +1976,6 @@
         "postgresql.png"
       ]
     },
-    "Surviveplus.WpfLocalization/1.0.4.2": {
-      "sha512": "Js1IeJof75lCiKKvuysus9kbw7HIRP0bEJTXhwK0jvx6nu4nWEN7RP039rVCKYwArLDZxkwIbB6UrYXKM8cDLg==",
-      "type": "package",
-      "path": "surviveplus.wpflocalization/1.0.4.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "lib/net45/Surviveplus.WpfLocalization.dll",
-        "lib/net45/Surviveplus.WpfLocalization.xml",
-        "lib/net45/ja/Surviveplus.WpfLocalization.xml",
-        "readme.txt",
-        "surviveplus.wpflocalization.1.0.4.2.nupkg.sha512",
-        "surviveplus.wpflocalization.nuspec"
-      ]
-    },
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -2348,12 +2319,12 @@
       "MahApps.Metro >= 2.4.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Npgsql >= 8.0.5",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.10",
-      "Surviveplus.WpfLocalization >= 1.0.4.2"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.10"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mansu\\.nuget\\packages\\": {}
+    "C:\\Users\\mansu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2364,8 +2335,12 @@
       "packagesPath": "C:\\Users\\mansu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mansu\\source\\repos\\DeLong\\DeLong\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\mansu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2373,7 +2348,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2390,8 +2364,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -2414,10 +2389,6 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[8.0.10, )"
-          },
-          "Surviveplus.WpfLocalization": {
-            "target": "Package",
-            "version": "[1.0.4.2, )"
           }
         },
         "imports": [
@@ -2439,20 +2410,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Surviveplus.WpfLocalization 1.0.4.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Surviveplus.WpfLocalization",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }
