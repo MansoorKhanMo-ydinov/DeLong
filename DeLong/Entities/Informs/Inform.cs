@@ -6,5 +6,5 @@ public class Inform:Auditable
     public decimal KirishSummasi { get; set; }
     public decimal SotilishNarxi { get; set; }
     public int Soni { get; set; }
-    public int Prosent { get; set; }
+    public decimal Prosent { get; set; }
 }
