@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeLong.Windows.Kirims"
         mc:Ignorable="d"
-        Title="Add Kirim Window" Height="600" Width="800">
+        Title="Add Kirim Window" Height="700" Width="800">
     <Grid Background="#334257">
         <StackPanel Margin="20" VerticalAlignment="Top">
             <TextBlock Text="Id" Foreground="#EEEEEE" Margin="0,0,0,5" HorizontalAlignment="Center"/>
@@ -15,11 +15,7 @@
             <DatePicker x:Name="dpSana" Background="#476072" Foreground="#EEEEEE" />
 
             <TextBlock Text="Role" Foreground="#EEEEEE" Margin="0,20,0,5" HorizontalAlignment="Center"/>
-            <ComboBox x:Name="cbRole" Background="#476072" Foreground="#EEEEEE" Height="30">
-                <ComboBoxItem Content="Admin" />
-                <ComboBoxItem Content="Manager" />
-                <ComboBoxItem Content="User" />
-            </ComboBox>
+            <ComboBox x:Name="cbRole" Background="#476072" Foreground="#EEEEEE" Height="30"/>
 
             <TextBlock Text="Ombor Nomi" Foreground="#EEEEEE" Margin="0,20,0,5" HorizontalAlignment="Center"/>
             <TextBox x:Name="txtOmborNomi" Background="#476072" Foreground="#EEEEEE"/>
@@ -31,7 +27,7 @@
             <TextBox x:Name="txtJamiSoni" Background="#476072" Foreground="#EEEEEE" IsReadOnly="True"/>
 
             <TextBlock Text="Inform Table" Foreground="#EEEEEE" Margin="0,20,0,5" HorizontalAlignment="Center"/>
-            <DataGrid x:Name="dgInform" Background="#476072" Foreground="Black" AutoGenerateColumns="False" Height="200">
+            <DataGrid x:Name="dgInform" Background="#476072" Foreground="Black" AutoGenerateColumns="False" Height="100">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
                     <DataGridTextColumn Header="Tovar Nomi" Binding="{Binding TovarNomi}" Width="150"/>
@@ -50,6 +46,9 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+
+            <!-- Add New Row Button -->
+            <Button Content="Add New Row" Click="AddNewRowButton_Click" Background="#548CA8" Foreground="#EEEEEE" Height="30" Margin="0,20,0,0"/>
 
             <Button Content="Add Kirim" Click="AddKirimButton_Click" Background="#548CA8" Foreground="#EEEEEE" Height="30" Margin="0,20,0,0"/>
         </StackPanel>

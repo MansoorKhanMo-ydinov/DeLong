@@ -81,7 +81,7 @@ namespace DeLong.Pages.Kirims
                 {
                     try
                     {
-                        _context.Kirims.Update(editWindow.UpdatedUser);
+                        _context.Kirims.Update(editWindow.UpdatedKirim);
                         await _context.SaveChangesAsync();
                         LoadKirims();
                     }
