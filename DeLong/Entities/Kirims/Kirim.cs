@@ -6,6 +6,7 @@ namespace DeLong.Entities.Kirims;
 public class Kirim:Auditable
 {
     public string OmborNomi { get; set; }
+    public DateTime Sana { get; set; }
     public string Yetkazuvchi { get; set; }
     public decimal JamiNarxi { get; set; }
     public decimal JamiSoni { get; set; }

@@ -10,10 +10,19 @@
     <Compile Update="Pages\Clients\UserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Kirims\KirimPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Products\ProductPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\WareHouses\WareHousePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Kirims\AddKirimWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Kirims\EditKirimWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\Products\AddProductWindow.xaml.cs">
@@ -42,10 +51,19 @@
     <Page Update="Pages\Clients\UserPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Kirims\KirimPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Products\ProductPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\WareHouses\WareHousePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Kirims\AddKirimWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Kirims\EditKirimWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\Products\AddProductWindow.xaml">
