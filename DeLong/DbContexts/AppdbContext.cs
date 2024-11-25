@@ -1,5 +1,5 @@
-﻿using DeLong.Entities.Incomes;
-using DeLong.Entities.Informs;
+﻿using DeLong.Entities.Informs;
+using DeLong.Entities.Kirims;
 using DeLong.Entities.Products;
 using DeLong.Entities.Roles;
 using DeLong.Entities.Users;
