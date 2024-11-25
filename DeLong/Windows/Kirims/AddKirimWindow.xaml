@@ -3,10 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DeLong.Windows.Kirims"
         mc:Ignorable="d"
-        Title="Add KirimWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Add KirimWindow" Height="650" Width="600">
+    <Grid Background="#334257">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10" VerticalAlignment="Top">
+                <!-- T/R (Avtomatik) -->
+                <TextBlock Text="T/R" Foreground="#EEEEEE" Margin="0,0,0,5" HorizontalAlignment="Left"/>
+                <TextBox x:Name="txtTR" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE" IsReadOnly="True" Text="Auto"/>
+
+                <!-- Sana (DatePicker) -->
+                <TextBlock Text="Sana" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="dpSana" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE"/>
+
+                <!-- Ombor Nomi -->
+                <TextBlock Text="Ombor Nomi" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <TextBox x:Name="txtOmborNomi" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE" Text="Enter Ombor Nomi"/>
+
+                <!-- Role (ComboBox) -->
+                <TextBlock Text="Role" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="cmbRole" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE">
+                    <ComboBoxItem Content="Manager" />
+                    <ComboBoxItem Content="Worker" />
+                    <ComboBoxItem Content="Supplier" />
+                </ComboBox>
+
+                <!-- Jami Soni va Jami Narxini Informga qarab olish -->
+                <TextBlock Text="Jami Soni" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <TextBox x:Name="txtJamiSoni" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE" IsReadOnly="True" Text="Jami Soni" />
+
+                <TextBlock Text="Jami Narxi" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <TextBox x:Name="txtJamiNarxi" Width="250" Height="25" Background="#476072" Foreground="#EEEEEE" IsReadOnly="True" Text="Jami Narxi" />
+
+                <!-- Inform Table (DataGrid) -->
+                <TextBlock Text="Inform Table" Foreground="#EEEEEE" Margin="0,10,0,5" HorizontalAlignment="Left"/>
+                <DataGrid x:Name="dgInform" Width="550" Height="150" Background="#476072" Foreground="#EEEEEE" AutoGenerateColumns="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="T/R" Binding="{Binding TR}" Width="70"/>
+                        <DataGridTextColumn Header="Mahsulot Nomi" Binding="{Binding MahsulotNomi}" Width="150"/>
+                        <DataGridTextColumn Header="Kirish Summasi" Binding="{Binding KirishSummasi}" Width="100"/>
+                        <DataGridTextColumn Header="Soni" Binding="{Binding Soni}" Width="80"/>
+                        <DataGridTextColumn Header="Sotish Narxi" Binding="{Binding SotishNarxi}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- Add and Save Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <Button Content="Add" Width="100" Height="30" Background="#548CA8" Foreground="#EEEEEE" Margin="0,0,10,0" Click="AddButton_Click"/>
+                    <Button Content="Save" Width="100" Height="30" Background="#548CA8" Foreground="#EEEEEE" Click="SaveButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

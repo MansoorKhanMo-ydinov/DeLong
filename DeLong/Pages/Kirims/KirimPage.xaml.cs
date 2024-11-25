@@ -1,44 +1,103 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using DeLong.DbContexts;
 using DeLong.Entities.Incomes;
+using DeLong.Windows.Kirims;
 
 namespace DeLong.Pages.Kirims
 {
     public partial class KirimPage : Page
     {
+        private readonly AppdbContext _dbContext;
+
         public KirimPage()
         {
             InitializeComponent();
+            _dbContext = new AppdbContext(); // DbContextni ishga tushiramiz
+            LoadData();
+        }
+
+        // Method to load data into the DataGrid
+        private void LoadData()
+        {
+            try
+            {
+                var kirims = _dbContext.Kirims.ToList(); // Ma'lumotlarni olib kelish
+                kirimDataGrid.ItemsSource = kirims; // DataGridga bog'lash
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Kirim ma'lumotlarini yuklashda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         // Search Button Click Event
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             string searchQuery = txtSearch.Text.Trim();
-            // Qidiruv so'rovini ishlash uchun logika
-            // Masalan, DataGrid-ni qidiruv natijalari bilan yangilash
-            MessageBox.Show($"Search for: {searchQuery}");
-            // Bu yerda siz filtering yoki boshqa qidiruv usullarini qo'llashingiz mumkin
+
+            try
+            {
+                var filteredKirims = _dbContext.Kirims
+                    .Where(k => k.Ombornomi.Contains(searchQuery) || k.JamiSoni.ToString().Contains(searchQuery))
+                    .ToList();
+
+                kirimDataGrid.ItemsSource = filteredKirims;
+
+                if (!filteredKirims.Any())
+                {
+                    MessageBox.Show($"Qidiruv bo'yicha hech narsa topilmadi: {searchQuery}", "Natija", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Qidiruvda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         // Add Kirim Button Click Event
         private void AddKirimButton_Click(object sender, RoutedEventArgs e)
         {
-            // Yangi Kirim qo'shish logikasi
-            // Masalan, yangi kirim qo'shish uchun formani ochish yoki boshqa sahifaga o'tish
-            MessageBox.Show("Add Kirim clicked!");
+            try
+            {
+                AddKirimWindow addKirimWindow = new AddKirimWindow(_dbContext);
+                bool? result = addKirimWindow.ShowDialog();
+                if (result == true)
+                {
+                    LoadData(); // Ma'lumotlarni qayta yuklash
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Kirim qo'shishda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         // Edit Button Click Event
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var dataContext = button?.DataContext as Kirim; // Kirim modeli bilan ishlash
+            var dataContext = button?.DataContext as Kirim;
+
             if (dataContext != null)
             {
-                // Tahrirlash uchun Kirim ma'lumotlarini olish
-                MessageBox.Show($"Edit clicked for Kirim entry with Sana: {dataContext.Sana}");
-                // Tahrirlash oynasini ochish yoki boshqa amallarni bajarish
+                try
+                {
+                    AddKirimWindow editKirimWindow = new AddKirimWindow(_dbContext);
+                    bool? result = editKirimWindow.ShowDialog();
+                    if (result == true)
+                    {
+                        LoadData(); // Ma'lumotlarni qayta yuklash
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Tahrirlashda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tahrirlash uchun ma'lumot tanlanmagan!", "Ogohlantirish", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -46,16 +105,29 @@ namespace DeLong.Pages.Kirims
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var dataContext = button?.DataContext as Kirim; // Kirim ma'lumotlari
+            var dataContext = button?.DataContext as Kirim;
+
             if (dataContext != null)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this entry?", "Delete Confirmation", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show("Haqiqatan ham ushbu ma'lumotni o'chirmoqchimisiz?", "O'chirish", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    // Kirimni o'chirish logikasi
-                    MessageBox.Show($"Deleted Kirim entry with Sana: {dataContext.Sana}");
-                    // Bu yerda o'chirish uchun model yoki ma'lumotlar bazasiga o'zgarishlarni yuborish
+                    try
+                    {
+                        _dbContext.Kirims.Remove(dataContext);
+                        _dbContext.SaveChanges(); // O'zgarishlarni saqlash
+                        LoadData(); // Ma'lumotlarni qayta yuklash
+                        MessageBox.Show("Ma'lumot muvaffaqiyatli o'chirildi.", "O'chirish", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"O'chirishda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("O'chirish uchun ma'lumot tanlanmagan!", "Ogohlantirish", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

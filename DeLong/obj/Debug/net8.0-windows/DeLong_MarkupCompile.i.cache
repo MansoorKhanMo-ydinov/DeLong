@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
 13-2055097586
 11901224391
-471765355875
+49-539932660
 216-34333172
 MainWindow.xaml;Pages\Clients\UserPage.xaml;Pages\Kirims\KirimPage.xaml;Pages\Products\ProductPage.xaml;Pages\WareHouses\WareHousePage.xaml;Windows\Kirims\AddKirimWindow.xaml;Windows\Kirims\EditKirimWindow.xaml;Windows\Products\AddProductWindow.xaml;Windows\Products\ProductEditWindow.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;Windows\Warehouses\AddWarehouseWindow.xaml;Windows\Warehouses\EditWareHouseWindow.xaml;
 
-True
+False
 

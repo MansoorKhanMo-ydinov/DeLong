@@ -33,14 +33,11 @@ namespace DeLong.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<long>("InformId")
-                        .HasColumnType("bigint");
-
                     b.Property<int>("JamiSoni")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Jaminarxi")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Jaminarxi")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Ombornomi")
                         .IsRequired()
@@ -48,6 +45,9 @@ namespace DeLong.Migrations
 
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("Sana")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -57,8 +57,6 @@ namespace DeLong.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("InformId");
 
                     b.HasIndex("RoleId");
 
@@ -78,6 +76,9 @@ namespace DeLong.Migrations
 
                     b.Property<int>("Foizi")
                         .HasColumnType("integer");
+
+                    b.Property<long?>("KirimId")
+                        .HasColumnType("bigint");
 
                     b.Property<decimal>("KirimSummasi")
                         .HasColumnType("numeric");
@@ -102,6 +103,8 @@ namespace DeLong.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KirimId");
 
                     b.ToTable("Informs");
                 });
@@ -262,21 +265,25 @@ namespace DeLong.Migrations
 
             modelBuilder.Entity("DeLong.Entities.Incomes.Kirim", b =>
                 {
-                    b.HasOne("DeLong.Entities.Informs.Inform", "Inform")
-                        .WithMany()
-                        .HasForeignKey("InformId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("DeLong.Entities.Roles.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Inform");
-
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("DeLong.Entities.Informs.Inform", b =>
+                {
+                    b.HasOne("DeLong.Entities.Incomes.Kirim", null)
+                        .WithMany("Inform")
+                        .HasForeignKey("KirimId");
+                });
+
+            modelBuilder.Entity("DeLong.Entities.Incomes.Kirim", b =>
+                {
+                    b.Navigation("Inform");
                 });
 #pragma warning restore 612, 618
         }
