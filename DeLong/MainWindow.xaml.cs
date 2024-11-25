@@ -165,6 +165,6 @@ public partial class MainWindow : Window
 
     private void Kirim_button(object sender, MouseButtonEventArgs e)
     {
-        Navigator.Navigate(new Pages.Kirims.KirimPage());
+        
     }
 }
