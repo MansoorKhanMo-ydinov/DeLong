@@ -1,0 +1,30 @@
+﻿<Window x:Class="DeLong.Windows.Kirims.AddKirimWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeLong.Windows.Kirims"
+        mc:Ignorable="d"
+        Title="AddKirimWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <!-- Kirim formasi uchun inputlar -->
+            <TextBlock Text="Ombor Nomi" />
+            <ComboBox Name="OmborNomiComboBox" Width="120" Margin="5"/>
+
+            <TextBlock Text="Yetkazuvchi" />
+            <TextBox Name="YetkazuvchiTextBox" Width="120" Margin="5"/>
+
+            <TextBlock Text="Sana" />
+            <DatePicker Name="SanaDatePicker" Width="120" Margin="5"/>
+
+            <TextBlock Text="Jami soni" />
+            <TextBox Name="JamiSoniTextBox" Width="120" Margin="5"/>
+
+            <TextBlock Text="Jami narxi" />
+            <TextBox Name="JamiNarxiTextBox" Width="120" Margin="5"/>
+
+            <Button Content="Yukni qo'shish" Click="AddKirimPageButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
