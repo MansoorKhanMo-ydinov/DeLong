@@ -5,26 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeLong.Windows.Kirims"
         mc:Ignorable="d"
-        Title="AddKirimWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <!-- Kirim formasi uchun inputlar -->
-            <TextBlock Text="Ombor Nomi" />
-            <ComboBox Name="OmborNomiComboBox" Width="120" Margin="5"/>
+        Title="Add Kirim Window" Height="800" Width="800">
+    <Grid Background="#334257">
+        <!-- Main content section -->
+        <StackPanel Margin="20" VerticalAlignment="Top">
+            <!-- Ombor Nomi -->
+            <TextBlock Text="Ombor Nomi" Foreground="#EEEEEE" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+            <ComboBox Name="OmborNomiComboBox" Background="#476072" Foreground="#EEEEEE" Width="200" Margin="0,10" HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Yetkazuvchi" />
-            <TextBox Name="YetkazuvchiTextBox" Width="120" Margin="5"/>
+            <!-- Yetkazuvchi -->
+            <TextBlock Text="Yetkazuvchi" Foreground="#EEEEEE" HorizontalAlignment="Center"/>
+            <TextBox Name="YetkazuvchiTextBox" Background="#476072" Foreground="#EEEEEE" Width="200" Margin="0,10" HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Sana" />
-            <DatePicker Name="SanaDatePicker" Width="120" Margin="5"/>
+            <!-- Sana -->
+            <TextBlock Text="Sana" Foreground="#EEEEEE" HorizontalAlignment="Center"/>
+            <DatePicker Name="SanaDatePicker" Background="#476072" Foreground="#EEEEEE" Width="200" Margin="0,10" HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Jami soni" />
-            <TextBox Name="JamiSoniTextBox" Width="120" Margin="5"/>
+            <!-- Jami soni -->
+            <TextBlock Text="Jami soni" Foreground="#EEEEEE" HorizontalAlignment="Center"/>
+            <TextBox Name="JamiSoniTextBox" Background="#476072" Foreground="#EEEEEE" Width="200" Margin="0,10" HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Jami narxi" />
-            <TextBox Name="JamiNarxiTextBox" Width="120" Margin="5"/>
-
-            <Button Content="Yukni qo'shish" Click="AddKirimPageButton_Click" Margin="5"/>
+            <!-- Jami narxi -->
+            <TextBlock Text="Jami narxi" Foreground="#EEEEEE" HorizontalAlignment="Center"/>
+            <TextBox Name="JamiNarxiTextBox" Background="#476072" Foreground="#EEEEEE" Width="200" Margin="0,10" HorizontalAlignment="Center"/>
         </StackPanel>
+
+        <!-- DataGrid Section -->
+        <DataGrid Name="dgInform" AutoGenerateColumns="True" Margin="20,70,20,20" Foreground="Black" Height="200" Background="#476072">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mahsulot nomi" Binding="{Binding TovarNomi}" Width="*"/>
+                <DataGridTextColumn Header="Sotilish narxi" Binding="{Binding SotilishNarxi}" Width="*"/>
+                <DataGridTextColumn Header="Mahsulot soni" Binding="{Binding MahsulotSoni}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Add Row Button for DataGrid -->
+        <Button Content="Jadvalga Qo'shish" Click="AddRowToDataGrid" Background="#548CA8" Foreground="#EEEEEE" Height="40" Width="200" HorizontalAlignment="Center" Margin="20,350,20,10"/>
+
+        <!-- Add Kirim Button -->
+        <Button Content="Yukni qo'shish" Click="AddKirimPageButton_Click" Background="#548CA8" Foreground="#EEEEEE" Height="40" Width="200" HorizontalAlignment="Center" Margin="20,460,20,10"/>
     </Grid>
 </Window>
