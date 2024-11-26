@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\mansu\source\repos\DeLong\DeLong\App.xaml
-11-1932209886
+11-473880219
 11901224391
-45-4752120
+452023229979
 216-34333172
-MainWindow.xaml;Pages\Clients\UserPage.xaml;Pages\Products\ProductPage.xaml;Pages\WareHouses\WareHousePage.xaml;Windows\Kirims\AddKirimWindow.xaml;Windows\Products\AddProductWindow.xaml;Windows\Products\ProductEditWindow.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;Windows\Warehouses\AddWarehouseWindow.xaml;Windows\Warehouses\EditWareHouseWindow.xaml;
+MainWindow.xaml;Pages\Clients\UserPage.xaml;Pages\Kirims\KirimPage.xaml;Pages\Products\ProductPage.xaml;Pages\WareHouses\WareHousePage.xaml;Windows\Products\AddProductWindow.xaml;Windows\Products\ProductEditWindow.xaml;Windows\Users\AddUserWindow.xaml;Windows\Users\UserEditWindow.xaml;Windows\Warehouses\AddWarehouseWindow.xaml;Windows\Warehouses\EditWareHouseWindow.xaml;
 
-True
+False
 

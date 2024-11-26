@@ -20,7 +20,7 @@
             <Button x:Uid="AddButton2" x:Name="AddButton2" Content="Add" Width="80" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Background="#476072" Foreground="#EEEEEE" Click="AddProductButton_Click"/>
         </StackPanel>
 
-        <DataGrid x:Name="userDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
+        <DataGrid x:Name="productDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" Background="#548CA8" Foreground="Black">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Belgi"  Binding="{Binding Belgi}" SortMemberPath="Belgi" Width="*"/>
                 <DataGridTextColumn  Header="Soni" Binding="{Binding Soni}"  Width="*"/>

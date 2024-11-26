@@ -22,7 +22,7 @@ namespace DeLong.Pages.Warehouses
             try
             {
                 var warehouses = await _context.Warehouses.ToListAsync();
-                userDataGrid.ItemsSource = warehouses;
+                warehouseDataGrid.ItemsSource = warehouses;
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace DeLong.Pages.Warehouses
                 .Where(w => w.Name.Contains(searchQuery) || w.Name.Contains(searchQuery))
                 .ToList();
 
-            userDataGrid.ItemsSource = filteredWarehouses;
+            warehouseDataGrid.ItemsSource = filteredWarehouses;
         }
         private void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
