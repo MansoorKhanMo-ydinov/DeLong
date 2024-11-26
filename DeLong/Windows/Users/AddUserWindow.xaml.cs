@@ -12,7 +12,7 @@ namespace DeLong.Windows.Users
 
         public AddUserWindow(AppdbContext dbContext)
         {
-            InitializeComponent();
+             InitializeComponent();
             _dbContext = dbContext; // DbContext ni konstruktor orqali oling
         }
 

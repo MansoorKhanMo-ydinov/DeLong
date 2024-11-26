@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using DeLong.DbContexts;
 using DeLong.Entities.Informs;
 
 namespace DeLong.Windows.Kirims
@@ -63,7 +64,7 @@ namespace DeLong.Windows.Kirims
 
             try
             {
-                using (var context = new AppDbContext())
+                using (var context = new AppdbContext())
                 {
                     // Kirim mahsulotlarini bazaga qo'shish
                     foreach (var item in _kirimItems)
