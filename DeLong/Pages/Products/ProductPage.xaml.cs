@@ -20,7 +20,7 @@ namespace DeLong.Pages.Products
         private async Task LoadDataAsync()
         {
             var products = await _context.Products.ToListAsync();
-            userDataGrid.ItemsSource = products;
+            productDataGrid.ItemsSource = products;
         }
         private async void SearchButton_Click(object sender, RoutedEventArgs e)
         {
@@ -30,7 +30,7 @@ namespace DeLong.Pages.Products
                 .Where(u => u.Belgi.ToLower().Contains(searchText))
                 .ToListAsync();
 
-            userDataGrid.ItemsSource = filteredUsers; 
+            productDataGrid.ItemsSource = filteredUsers; 
         }
 
         private async void EditButton_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace DeLong.Pages.Products
 
         private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (userDataGrid.SelectedItem is Product selectedProduct)
+            if (productDataGrid.SelectedItem is Product selectedProduct)
             {
                 _context.Products.Remove(selectedProduct);
                 await _context.SaveChangesAsync();

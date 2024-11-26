@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DeLong.Pages.Clients;
+using DeLong.Pages.Kirims;
 using DeLong.Pages.Products;
 using DeLong.Pages.Warehouses;
 
@@ -79,24 +80,24 @@ public partial class MainWindow : Window
         _userPage.userDataGrid.Columns[9].Header = DeLong.Resourses.Resource.Firma_Adres;
         _userPage.userDataGrid.Columns[10].Header = DeLong.Resourses.Resource.Amallar;
 
-        _productPage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.Label;
-        _productPage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Quantity;
-        _productPage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Price_in_Sums;
-        _productPage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Price_in_Dollars;
-        _productPage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.Total_Price_in_Sums;
-        _productPage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.Total_Price_Dollors;
-        _productPage.userDataGrid.Columns[6].Header = DeLong.Resourses.Resource.Amallar;
+        _productPage.productDataGrid.Columns[0].Header = DeLong.Resourses.Resource.Label;
+        _productPage.productDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Quantity;
+        _productPage.productDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Price_in_Sums;
+        _productPage.productDataGrid.Columns[3].Header = DeLong.Resourses.Resource.Price_in_Dollars;
+        _productPage.productDataGrid.Columns[4].Header = DeLong.Resourses.Resource.Total_Price_in_Sums;
+        _productPage.productDataGrid.Columns[5].Header = DeLong.Resourses.Resource.Total_Price_Dollors;
+        _productPage.productDataGrid.Columns[6].Header = DeLong.Resourses.Resource.Amallar;
 
 
         _productPage.MySearch.Content = DeLong.Resourses.Resource.Search;
         _productPage.AddButton2.Content = DeLong.Resourses.Resource.Add;
 
-        _wareHousePage.userDataGrid.Columns[0].Header = DeLong.Resourses.Resource.ID;
-        _wareHousePage.userDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Name;
-        _wareHousePage.userDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres;
-        _wareHousePage.userDataGrid.Columns[3].Header = DeLong.Resourses.Resource.CreatedAt;
-        _wareHousePage.userDataGrid.Columns[4].Header = DeLong.Resourses.Resource.UpdatedAt;
-        _wareHousePage.userDataGrid.Columns[5].Header = DeLong.Resourses.Resource.Amallar;
+        _wareHousePage.warehouseDataGrid.Columns[0].Header = DeLong.Resourses.Resource.ID;
+        _wareHousePage.warehouseDataGrid.Columns[1].Header = DeLong.Resourses.Resource.Name;
+        _wareHousePage.warehouseDataGrid.Columns[2].Header = DeLong.Resourses.Resource.Adres;
+        _wareHousePage.warehouseDataGrid.Columns[3].Header = DeLong.Resourses.Resource.CreatedAt;
+        _wareHousePage.warehouseDataGrid.Columns[4].Header = DeLong.Resourses.Resource.UpdatedAt;
+        _wareHousePage.warehouseDataGrid.Columns[5].Header = DeLong.Resourses.Resource.Amallar;
         _wareHousePage.WarehouseSearch.Content = DeLong.Resourses.Resource.Search;
         _wareHousePage.AddWarehouseButton.Content = DeLong.Resourses.Resource.Add;
         // UserPage dagi bosh elementlarni yangilash
@@ -165,6 +166,6 @@ public partial class MainWindow : Window
 
     private void Kirim_button(object sender, MouseButtonEventArgs e)
     {
-        
+        Navigator.Navigate(new KirimPage());
     }
 }
