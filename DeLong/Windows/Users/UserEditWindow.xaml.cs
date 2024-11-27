@@ -7,7 +7,8 @@ namespace DeLong.Windows.Users
 {
     public partial class UserEditWindow : Window
     {
-        private readonly AppdbContext _dbContext; // AppDbContext obyektini qo'shish
+        private readonly AppdbContext _dbContext; 
+
         public User UpdatedUser { get; private set; }
         private readonly User _originalUser; // Asl foydalanuvchi obyektini saqlash
 
