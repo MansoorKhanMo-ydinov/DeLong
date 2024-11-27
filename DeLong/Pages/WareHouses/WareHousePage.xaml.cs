@@ -56,25 +56,21 @@ namespace DeLong.Pages.Warehouses
         {
             if (sender is Button button && button.DataContext is Warehouse warehouse)
             {
-                var editWindow = new EditWarehouseWindow(_context,warehouse);
+                var editWindow = new EditWarehouseWindow(_context, warehouse);
 
                 if (editWindow.ShowDialog() == true)
                 {
                     try
                     {
-                        _context.Warehouses.Update(editWindow.UpdatedWareHouse);
+                        _context.Warehouses.Update(editWindow.UpdatedWarehouse);
                         await _context.SaveChangesAsync();
                         LoadWarehouseData();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Omborni tahrirlashda xato: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show($"Foydalanuvchini tahrirlashda xato: {ex.Message}");
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Tahrirlash uchun ombor tanlanmagan.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         private async void DeleteWarehouseButton_Click(object sender, RoutedEventArgs e)

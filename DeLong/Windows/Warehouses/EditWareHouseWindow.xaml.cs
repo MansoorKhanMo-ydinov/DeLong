@@ -8,71 +8,50 @@ namespace DeLong.Windows.Warehouses
     public partial class EditWarehouseWindow : Window
     {
         private readonly AppdbContext _dbContext;
-        public Warehouse UpdatedWareHouse { get; private set; }
-
-        private readonly int _warehouseId;
-        private Warehouse _warehouse;
+        public Warehouse UpdatedWarehouse { get; private set; }
+        private readonly Warehouse _originalWarehouse; 
 
         public EditWarehouseWindow(AppdbContext dbContext,Warehouse warehouse)
         {
             InitializeComponent();
+
             _dbContext = dbContext;
-            LoadWarehouseData();
-        }
+            _originalWarehouse = warehouse;
 
-        private void LoadWarehouseData()
-        {
-            if (_warehouse == null)
-            {
-                MessageBox.Show("Warehouse not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Close();
-                return;
-            }
-
-            // Populate fields with data
-            txtWarehouseID.Text = _warehouse.Id.ToString();
-            txtName.Text = _warehouse.Name;
-            txtAddress.Text = _warehouse.Adres;  // Assuming Address is the correct field name
-            txtCreatedAt.Text = _warehouse.CreatedAt.ToString("yyyy-MM-dd");
+            txtName.Text = warehouse.Name;
+            txtAddress.Text = warehouse.Adres;
+            txtCreatedAt.Text = warehouse.CreatedAt.ToString();
+            txtUpdatedAt.Text = warehouse.UpdatedAt.ToString();
         }
 
         private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
-            // Input validation
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
+            if (int.TryParse(txtWarehouseID.Text, out int innValue))
             {
-                MessageBox.Show("Please fill out all fields.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            try
-            {
-                // Reload warehouse from the database to avoid concurrency issues
-                _warehouse = _dbContext.Warehouses.FirstOrDefault(w => w.Name == _warehouse.Name);
-                if (_warehouse == null)
+                _originalWarehouse.Adres = txtAddress.Text;
+                _originalWarehouse.Name = txtName.Text;
+                _originalWarehouse.CreatedAt = DateTime.Parse(txtCreatedAt.Text);
+                _originalWarehouse.UpdatedAt = DateTime.UtcNow;
+                try
                 {
-                    MessageBox.Show("Warehouse no longer exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Close();
-                    return;
+                    _dbContext.Entry(_originalWarehouse).State = EntityState.Modified;
+                    _dbContext.SaveChanges();
+
+                    MessageBox.Show("Foydalanuvchi muvaffaqiyatli yangilandi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    this.DialogResult = true; 
+                    this.Close(); 
                 }
-
-                // Update fields
-                _warehouse.Name = txtName.Text;
-                _warehouse.Adres = txtAddress.Text;  // Corrected Address field
-                _warehouse.UpdatedAt = DateTime.Now;
-
-                _dbContext.SaveChanges();
-                MessageBox.Show("Warehouse updated successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                Close();
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show($"Xatolik yuz berdi: {ex.Message}", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            catch (DbUpdateException dbEx)
+            else
             {
-                MessageBox.Show($"Database error: {dbEx.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Iltimos, INN maydoniga to'g'ri raqam kiriting!", "Xato", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }
