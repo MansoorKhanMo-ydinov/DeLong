@@ -24,7 +24,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" SortMemberPath="Id" Width="*"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*" Foreground="Black"/>
                 <DataGridTextColumn Header="Created At" Binding="{Binding CreatedAt, StringFormat='{}{0:g}'}" Width="*"/>
                 <DataGridTextColumn Header="Updated At" Binding="{Binding UpdatedAt, TargetNullValue='N/A', StringFormat='{}{0:g}'}" Width="*"/>
                 <DataGridTemplateColumn Header="Actions" Width="150">
