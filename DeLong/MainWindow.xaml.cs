@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DeLong.Pages.Clients;
-using DeLong.Pages.Kirims;
 using DeLong.Pages.Products;
 using DeLong.Pages.Warehouses;
 
@@ -164,8 +163,5 @@ public partial class MainWindow : Window
         Navigator.Navigate(_wareHousePage);
     }
 
-    private void Kirim_button(object sender, MouseButtonEventArgs e)
-    {
-        Navigator.Navigate(new KirimPage());
-    }
+    
 }

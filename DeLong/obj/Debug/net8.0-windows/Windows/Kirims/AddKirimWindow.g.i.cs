@@ -84,7 +84,7 @@ namespace DeLong.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DeLong;component/windows/kirims/addkirimwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DeLong;V1.0.0.0;component/windows/kirims/addkirimwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\Kirims\AddKirimWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
