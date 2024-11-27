@@ -104,7 +104,6 @@
                             Content="Kirim" 
                             Foreground="#E4E0E1" 
                             FontSize="18" 
-                            MouseDown="Kirim_button"
                             VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
