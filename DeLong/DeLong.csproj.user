@@ -10,6 +10,9 @@
     <Compile Update="Pages\Clients\UserPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Kirims\KirimPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Products\ProductPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Clients\UserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Kirims\KirimPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Products\ProductPage.xaml">
