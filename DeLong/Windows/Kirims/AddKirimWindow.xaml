@@ -23,7 +23,7 @@
 
         <!-- Kirim ma'lumotlari -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
-            <TextBox Name="txtOmborNomi" Text="Ombor Nomi" Width="150" Margin="5" Background="#34495E" Foreground="#ECF0F1" TextChanged="txtOmborNomi_TextChanged"/>
+            <TextBox Name="txtOmborNomi" Text="Ombor Nomi" Width="150" Margin="5" Background="#34495E" Foreground="#ECF0F1" />
             <DatePicker Name="datePickerSana" Width="150" Margin="5" Background="#34495E" Foreground="#ECF0F1"/>
             <TextBox Name="txtYetkazuvchi" Width="150" Margin="5" Background="#34495E" Foreground="#ECF0F1"/>
             <TextBox Name="txtJamiNarxi" Width="100" Margin="5" Background="#34495E" Foreground="#ECF0F1"/>

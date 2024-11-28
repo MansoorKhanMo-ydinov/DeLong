@@ -10,15 +10,17 @@ namespace DeLong.Windows.Kirims
     public partial class AddKirimWindow : Window
     {
         private readonly AppdbContext _dbContext;
-        private List<Inform> kirimItems = new List<Inform>(); // Kirim itemlarini saqlash
+        private ObservableCollection<Inform> kirimItems = new ObservableCollection<Inform>(); 
 
         public AddKirimWindow(AppdbContext dbContext)
         {
             InitializeComponent();
             _dbContext = dbContext;
+
+            kirimItems.Add(new Inform());
+            InformDataGrid.ItemsSource = kirimItems;
         }
 
-        // Inform jadvaliga yangi qator qo'shish
         private void AddInformRowButton_Click(object sender, RoutedEventArgs e)
         {
             string tovarNomi = txtTovarNomi.Text.Trim();
@@ -28,7 +30,6 @@ namespace DeLong.Windows.Kirims
                 return;
             }
 
-            // Kirish narxi va sotilish narxini tekshirish
             if (!decimal.TryParse(txtKirishNarxi.Text, out decimal kirishNarxi) || kirishNarxi <= 0)
             {
                 MessageBox.Show("Iltimos, to'g'ri kirish narxini kiriting.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -41,14 +42,12 @@ namespace DeLong.Windows.Kirims
                 return;
             }
 
-            // Soni tekshirish
             if (!int.TryParse(txtSoni.Text, out int soni) || soni <= 0)
             {
                 MessageBox.Show("Iltimos, to'g'ri soni kiriting.", "Xato", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Jadvalga yangi kirim elementini qo'shish
             kirimItems.Add(new Inform
             {
                 TovarNomi = tovarNomi,
@@ -57,12 +56,9 @@ namespace DeLong.Windows.Kirims
                 Soni = soni
             });
 
-            // DataGrid'ni yangilash
-            InformDataGrid.ItemsSource = null;
             InformDataGrid.ItemsSource = kirimItems;
         }
 
-        // Saqlash tugmasi bosilganda
         private async void SaveKirimButton_Click(object sender, RoutedEventArgs e)
         {
             string omborNomi = txtOmborNomi.Text.Trim();
@@ -77,20 +73,17 @@ namespace DeLong.Windows.Kirims
 
             try
             {
-                // Kirimni yaratish
                 Kirim kirim = new Kirim
                 {
                     OmborNomi = omborNomi,
                     Sana = sana,
                     Yetkazuvchi = yetkazuvchi,
-                    Informs = kirimItems
+                    Informs = new List<Inform>(kirimItems) 
                 };
 
-                // Ma'lumotlar bazasiga qo'shish
                 _dbContext.Kirims.Add(kirim);
                 await _dbContext.SaveChangesAsync();
 
-                // Muvaffaqiyatli xabar
                 MessageBox.Show("Kirim muvaffaqiyatli saqlandi.", "Muvaffaqiyat", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.DialogResult = true;
                 this.Close();
@@ -101,7 +94,6 @@ namespace DeLong.Windows.Kirims
             }
         }
 
-        // Bekor qilish tugmasi
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -110,36 +102,27 @@ namespace DeLong.Windows.Kirims
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var row = button?.DataContext as Inform; // YourDataModel - bu sizning jadval ma'lumotlarini saqlaydigan model
+            var row = button?.DataContext as Inform; 
 
             if (row != null)
             {
-                // Masalan, yangi ma'lumotlar bilan formani to'ldirish
                 txtTovarNomi.Text = row.TovarNomi;
                 txtKirishNarxi.Text = row.KirishSummasi.ToString();
                 txtSotilishNarxi.Text = row.SotilishNarxi.ToString();
                 txtSoni.Text = row.Soni.ToString();
 
-                // Yangi qiymatlar bilan ma'lumotni tahrir qilish uchun boshqa amallarni bajaring
-                // Siz shu yerda formani ko'rsating yoki boshqa kerakli harakatlarni qilishingiz mumkin
             }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var row = button?.DataContext as Inform; // YourDataModel - bu sizning jadval ma'lumotlarini saqlaydigan model
+            var row = button?.DataContext as Inform; 
 
             if (row != null)
             {
-                // Ma'lumotni olib tashlash
-                // Masalan, ro'yxatdan o'chirish
-                var dataCollection = InformDataGrid.ItemsSource as ObservableCollection<Inform>;
-                if (dataCollection != null)
-                {
-                    dataCollection.Remove(row);
-                }
+                kirimItems.Remove(row); 
             }
-            }
+        }
     }
 }
